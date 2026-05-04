@@ -1,37 +1,17 @@
-# Devices in the Home Networking Lab
+# Device Registry
 
-This document provides descriptions and specifications for each device in the home networking and controls development lab. Each device plays a crucial role in the overall architecture and functionality of the network.
+This is the human-readable index. Network configuration is the authoritative source in [`network.json`](network.json).
+Run `python3 scripts/sync-device-docs.py` after editing `network.json` to propagate changes to device pages.
 
-## Devices Overview
-
-1. **Router**
-   - **Role**: Central hub for network traffic, connecting all devices to the internet and each other.
-   - **Functionality**: Manages data packets, assigns IP addresses, and provides firewall protection.
-
-2. **Switch**
-   - **Role**: Connects multiple devices within the local network.
-   - **Functionality**: Facilitates communication between devices by forwarding data to the correct destination.
-
-3. **Access Point**
-   - **Role**: Extends the wireless network coverage.
-   - **Functionality**: Allows wireless devices to connect to the wired network.
-
-4. **Smart Hub**
-   - **Role**: Central controller for smart home devices.
-   - **Functionality**: Integrates and manages various smart devices, enabling automation and remote control.
-
-5. **IoT Devices**
-   - **Role**: Various smart devices such as sensors, cameras, and smart appliances.
-   - **Functionality**: Collects data and performs specific tasks based on user commands or automation rules.
-
-6. **Firewall**
-   - **Role**: Security device that monitors and controls incoming and outgoing network traffic.
-   - **Functionality**: Protects the network from unauthorized access and threats.
-
-7. **Network Attached Storage (NAS)**
-   - **Role**: Centralized storage solution for the network.
-   - **Functionality**: Provides file storage and sharing capabilities across devices.
-
-## Clickable Diagram
-
-Refer to the [network diagram](diagrams/network-diagram.svg) for a visual representation of the network architecture. Each device in the diagram is clickable, linking to more detailed documentation about its specifications and functionalities.
+| Tag | Device | Type | Segment | Doc |
+|-----|--------|------|---------|-----|
+| MOD-1 | Cradlepoint IBR600 | LTE Router | Development | [→](devices/cradlepoint-ibr600.md) |
+| SRV-1 | Weidian Mini PC | Linux Server | Development | [→](devices/weidian-mini-pc.md) |
+| NS-1 | Ubiquiti USW-Lite-8-PoE | Managed Switch (52W PoE) | Development | [→](devices/ubiquiti-usw-lite-8-poe.md) |
+| MOD-2 | Cradlepoint S700 | 5G/LTE Router | EMA Assembly | [→](devices/cradlepoint-s700.md) |
+| NS-2 | Ubiquiti USW-Pro-8-PoE 120W | Managed Switch (120W PoE) | EMA Assembly | [→](devices/ubiquiti-usw-pro-8-poe.md) |
+| IPC-1 | Phoenix Contact PC | Industrial DIN-Rail PC | EMA Assembly | [→](devices/phoenix-contact-pc.md) |
+| AP-1 | WiFi Access Point | Wireless AP | EMA Assembly | [→](devices/wifi-ap.md) |
+| RTAC-1 | SEL RTAC 3505 | Automation Controller | Target Hardware | [→](devices/sel-rtac-3505.md) |
+| MTR-1 | eGauge 4015 | Revenue-Grade Power Meter | Target Hardware | [→](devices/egauge-4015.md) |
+| DEV-1 | Arduino OPTA | Industrial PLC / Test Device | Target Hardware | [→](devices/arduino-opta.md) |

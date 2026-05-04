@@ -1,39 +1,65 @@
-# Home Networking and Controls Development Lab Architecture
+# Lab Architecture
 
-This document outlines the overall architecture of the home networking and controls development lab. It details how different components interact within the network, providing a high-level overview of the system's design.
+## Network Segments
 
-## Architecture Overview
+The lab is divided into three logical segments connected through a pair of managed switches.
 
-The home networking lab consists of various devices and components that work together to create a cohesive environment for development and testing. The architecture is designed to facilitate easy integration, observability, and control of the devices.
+### Development Environment
 
-### Key Components
+| Device | IP | Role |
+|--------|----|------|
+| [Cradlepoint IBR600](devices/cradlepoint-ibr600.md) | TBD | LTE WAN uplink, remote access gateway |
+| [Ubiquiti USW-Lite-8-PoE](devices/ubiquiti-usw-lite-8-poe.md) | TBD | Layer 2 managed switch |
+| [Weidian Mini PC](devices/weidian-mini-pc.md) | TBD | Linux tooling and logging host |
 
-1. **Router**
-   - Central device that connects all network components.
-   - Manages traffic between devices and the internet.
+The IBR600 provides LTE connectivity managed via NetCloud Manager, enabling remote SSH/VPN access without a fixed IP. The USW-Lite-8-PoE connects development devices and provides a cross-connect uplink into the EMA assembly.
 
-2. **Smart Devices**
-   - Includes smart lights, thermostats, and security cameras.
-   - Each device communicates with the network to receive commands and send status updates.
+---
 
-3. **Control Hub**
-   - Acts as the central controller for smart devices.
-   - Provides a user interface for managing devices and automating tasks.
+### Energy Management Assembly
 
-4. **Logging and Monitoring Tools**
-   - Collects data from devices for analysis.
-   - Monitors the health and performance of the network.
+| Device | IP | Role |
+|--------|----|------|
+| [Cradlepoint S700](devices/cradlepoint-s700.md) | TBD | LTE WAN uplink |
+| [Ubiquiti USW-Pro-8-PoE 120W](devices/ubiquiti-usw-pro-8-poe.md) | TBD | Core managed PoE switch |
+| [Phoenix Contact PC](devices/phoenix-contact-pc.md) | TBD | Industrial controller / automation host |
 
-### Interaction Flow
+The EMA assembly is a self-contained unit on the gold-plate panel simulating a field-deployed energy management system. It has an independent LTE uplink (S700) separate from the development environment.
 
-- Devices communicate with the Control Hub via the Router.
-- The Control Hub sends commands to devices and receives status updates.
-- Logging and monitoring tools gather data from the Control Hub and devices for observability.
+---
 
-### Visual Representation
+### Target Hardware
 
-For a visual representation of the architecture, refer to the [network diagram](diagrams/network-diagram.svg). This diagram is interactive and provides links to detailed documentation for each device in the network.
+| Device | IP | Protocols |
+|--------|-----|-----------|
+| [SEL RTAC 3505](devices/sel-rtac-3505.md) | TBD | DNP3, Modbus TCP/RTU, IEC 61850, SEL protocol |
+| [eGauge 4015](devices/egauge-4015.md) | TBD | Modbus TCP, HTTP REST API |
 
-### Conclusion
+---
 
-This architecture is designed to be flexible and scalable, allowing for the addition of new devices and functionalities as needed. The integration of observability and logging tools ensures that the system can be monitored effectively, providing insights into performance and potential issues.
+## Physical Topology
+
+```
+[Internet / LTE]
+      |                    |
+  [IBR600]             [S700]
+      |                    |
+  [USW-Lite] --------- [USW-Pro]
+      |                /   |    \
+  [Weidian]      [PHX PC] [RTAC] [eGauge]
+```
+
+---
+
+## Power Distribution
+
+| PSU | Voltage | Location | Powers |
+|-----|---------|----------|--------|
+| Mean Well NDR-120-45 | 48V DC | Gold plate (EMA) | TBD |
+| Mean Well NDR-120-24 | 24V DC | Bottom DIN rail | TBD |
+
+---
+
+## Protocol Overview
+
+TBD — to be filled in as lab configuration is finalized.
