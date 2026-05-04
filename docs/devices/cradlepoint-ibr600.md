@@ -10,6 +10,8 @@
 | **Segment** | Development Environment |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | NetCloud Manager |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->

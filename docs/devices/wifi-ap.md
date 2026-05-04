@@ -3,13 +3,15 @@
 <!-- NETJSON:START -->
 | Field | Value |
 |-------|-------|
-| **Tag** | AP-1 |
+| **Tag** | AP-2 |
 | **Manufacturer** | TBD |
 | **Model** | TBD |
 | **Type** | Wireless Access Point |
 | **Segment** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | TBD |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->

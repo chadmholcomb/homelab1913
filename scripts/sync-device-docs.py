@@ -39,6 +39,8 @@ def render_info_block(node: dict) -> str:
         ("Segment",        SEGMENT_LABELS.get(p.get("segment", ""), p.get("segment") or "TBD")),
         ("Hostname",       p.get("hostname") or "TBD"),
         ("IP Address",     ", ".join(addresses) if addresses else "TBD"),
+        ("MAC Address",    p.get("mac_address") or "TBD"),
+        ("Serial Number",  p.get("serial_number") or "TBD"),
         ("Management",     p.get("management_platform") or "TBD"),
         ("Management URL", p.get("management_url") or "TBD"),
     ]

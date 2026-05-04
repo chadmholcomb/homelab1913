@@ -10,6 +10,8 @@
 | **Segment** | Development Environment |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | UniFi Network Controller |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->
@@ -32,7 +34,7 @@ Core switch for the development environment. Connects all development-side devic
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
 | P1 | ethernet | uplink | TBD | MOD-1 LAN |
-| P2 | ethernet | access | TBD | SRV-1 |
+| P2 | ethernet | access | TBD | PC-1 |
 | P3 | ethernet | access | TBD | TBD |
 | P4 | ethernet | access | TBD | TBD |
 | P5 | ethernet | access | TBD | TBD |

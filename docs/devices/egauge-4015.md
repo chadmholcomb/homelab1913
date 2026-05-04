@@ -3,13 +3,15 @@
 <!-- NETJSON:START -->
 | Field | Value |
 |-------|-------|
-| **Tag** | MTR-1 |
+| **Tag** | MET-1 |
 | **Manufacturer** | eGauge Systems |
 | **Model** | EG4015 |
 | **Type** | Revenue-Grade Power Meter |
 | **Segment** | Target Hardware |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | Web UI / REST API |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->

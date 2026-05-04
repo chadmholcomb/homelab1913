@@ -3,13 +3,15 @@
 <!-- NETJSON:START -->
 | Field | Value |
 |-------|-------|
-| **Tag** | IPC-1 |
+| **Tag** | PC-2 |
 | **Manufacturer** | Phoenix Contact |
 | **Model** | TBD |
 | **Type** | Industrial DIN-Rail PC |
 | **Segment** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | TBD |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->

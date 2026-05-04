@@ -10,6 +10,8 @@
 | **Segment** | Target Hardware |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | AcSELerator RTAC |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->

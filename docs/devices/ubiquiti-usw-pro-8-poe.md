@@ -10,6 +10,8 @@
 | **Segment** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | UniFi Network Controller |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->
@@ -33,10 +35,10 @@ Core switch for the Energy Management Assembly. Distributes PoE power and networ
 |-----------|------|------|---------|-------|
 | P1 | ethernet | trunk | TBD | Cross-connect from NS-1 P8 |
 | P2 | ethernet | uplink | TBD | MOD-2 LAN |
-| P3 | ethernet | access | TBD | IPC-1 |
+| P3 | ethernet | access | TBD | PC-2 |
 | P4 | ethernet | access | TBD | RTAC-1 |
-| P5 | ethernet | access | TBD | MTR-1 |
-| P6 | ethernet | access | TBD | AP-1 |
+| P5 | ethernet | access | TBD | MET-1 |
+| P6 | ethernet | access | TBD | AP-2 |
 | P7 | ethernet | access | TBD | DEV-1 (planned) |
 | P8 | ethernet | access | TBD | TBD |
 | SFP1 | sfp+ | reserved | TBD | TBD |

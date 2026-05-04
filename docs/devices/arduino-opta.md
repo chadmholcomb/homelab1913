@@ -10,6 +10,8 @@
 | **Segment** | Target Hardware |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | Arduino IDE / Arduino Cloud |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->
@@ -41,7 +43,7 @@ Industrial-grade Arduino used as a test and simulation device. Intended to act a
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
 | ETH0 | ethernet | lan | TBD | NS-2 P7 (planned) |
-| RS485 | rs485 | serial | TBD | TBD — connection to IPC-1 / RTAC-1 / MTR-1 (planned) |
+| RS485 | rs485 | serial | TBD | TBD — connection to PC-2 / RTAC-1 / MET-1 (planned) |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Planned Connections

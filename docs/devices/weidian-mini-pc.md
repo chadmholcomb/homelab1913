@@ -3,13 +3,15 @@
 <!-- NETJSON:START -->
 | Field | Value |
 |-------|-------|
-| **Tag** | SRV-1 |
+| **Tag** | PC-1 |
 | **Manufacturer** | Weidian |
 | **Model** | TBD |
 | **Type** | Industrial Fanless Mini PC |
 | **Segment** | Development Environment |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
+| **MAC Address** | TBD |
+| **Serial Number** | TBD |
 | **Management** | SSH |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->

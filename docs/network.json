@@ -15,10 +15,11 @@
         "type": "LTE Cellular Router",
         "segment": "development",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "NetCloud Manager",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/cradlepoint-ibr600.md",
         "interfaces": [
           {
@@ -51,10 +52,11 @@
         "type": "5G/LTE Branch Router",
         "segment": "ema",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "NetCloud Manager",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/cradlepoint-s700.md",
         "interfaces": [
           {
@@ -87,10 +89,11 @@
         "type": "Managed Layer 2 PoE Switch",
         "segment": "development",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "UniFi Network Controller",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/ubiquiti-usw-lite-8-poe.md",
         "interfaces": [
           {
@@ -105,7 +108,7 @@
             "type": "ethernet",
             "role": "access",
             "addresses": [],
-            "notes": "SRV-1"
+            "notes": "PC-1"
           },
           {
             "name": "P3",
@@ -165,10 +168,11 @@
         "type": "Managed Layer 2/3 PoE Switch",
         "segment": "ema",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "UniFi Network Controller",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/ubiquiti-usw-pro-8-poe.md",
         "interfaces": [
           {
@@ -190,7 +194,7 @@
             "type": "ethernet",
             "role": "access",
             "addresses": [],
-            "notes": "IPC-1"
+            "notes": "PC-2"
           },
           {
             "name": "P4",
@@ -204,14 +208,14 @@
             "type": "ethernet",
             "role": "access",
             "addresses": [],
-            "notes": "MTR-1"
+            "notes": "MET-1"
           },
           {
             "name": "P6",
             "type": "ethernet",
             "role": "access",
             "addresses": [],
-            "notes": "AP-1"
+            "notes": "AP-2"
           },
           {
             "name": "P7",
@@ -247,20 +251,21 @@
       }
     },
     {
-      "id": "SRV-1",
-      "label": "Weidian Mini PC",
+      "id": "PC-1",
+      "label": "Fanless PC",
       "local_addresses": [],
       "properties": {
-        "tag": "SRV-1",
+        "tag": "PC-1",
         "manufacturer": "Weidian",
         "model": null,
         "type": "Industrial Fanless Mini PC",
         "segment": "development",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "SSH",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/weidian-mini-pc.md",
         "interfaces": [
           {
@@ -276,20 +281,21 @@
       }
     },
     {
-      "id": "IPC-1",
+      "id": "PC-2",
       "label": "Phoenix Contact PC",
       "local_addresses": [],
       "properties": {
-        "tag": "IPC-1",
+        "tag": "PC-2",
         "manufacturer": "Phoenix Contact",
         "model": null,
         "type": "Industrial DIN-Rail PC",
         "segment": "ema",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": null,
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/phoenix-contact-pc.md",
         "interfaces": [
           {
@@ -305,20 +311,21 @@
       }
     },
     {
-      "id": "AP-1",
+      "id": "AP-2",
       "label": "WiFi Access Point",
       "local_addresses": [],
       "properties": {
-        "tag": "AP-1",
+        "tag": "AP-2",
         "manufacturer": "TBD",
         "model": "TBD",
         "type": "Wireless Access Point",
         "segment": "ema",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "TBD",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/wifi-ap.md",
         "interfaces": [
           {
@@ -351,10 +358,11 @@
         "type": "Real-Time Automation Controller",
         "segment": "target",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "AcSELerator RTAC",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/sel-rtac-3505.md",
         "interfaces": [
           {
@@ -391,20 +399,21 @@
       }
     },
     {
-      "id": "MTR-1",
+      "id": "MET-1",
       "label": "eGauge 4015",
       "local_addresses": [],
       "properties": {
-        "tag": "MTR-1",
+        "tag": "MET-1",
         "manufacturer": "eGauge Systems",
         "model": "EG4015",
         "type": "Revenue-Grade Power Meter",
         "segment": "target",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "Web UI / REST API",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/egauge-4015.md",
         "interfaces": [
           {
@@ -430,10 +439,11 @@
         "type": "Industrial Programmable Logic Controller",
         "segment": "target",
         "hostname": null,
+        "mac_address": null,
+        "serial_number": null,
         "management_platform": "Arduino IDE / Arduino Cloud",
         "management_url": null,
         "firmware_version": null,
-        "serial_number": null,
         "doc": "docs/devices/arduino-opta.md",
         "interfaces": [
           {
@@ -448,11 +458,11 @@
             "type": "rs485",
             "role": "serial",
             "addresses": [],
-            "notes": "TBD — connection to IPC-1 / RTAC-1 / MTR-1 (planned)"
+            "notes": "TBD — connection to PC-2 / RTAC-1 / MET-1 (planned)"
           }
         ],
         "protocols": ["Modbus RTU", "Modbus TCP"],
-        "notes": "Test device for IPC-1, RTAC-1, MTR-1. Connections TBD."
+        "notes": "Test device for PC-2, RTAC-1, MET-1. Connections TBD."
       }
     }
   ],
@@ -491,7 +501,7 @@
     },
     {
       "source": "NS-1",
-      "target": "SRV-1",
+      "target": "PC-1",
       "properties": {
         "type": "ethernet",
         "source_port": "P2",
@@ -527,7 +537,7 @@
     },
     {
       "source": "NS-2",
-      "target": "IPC-1",
+      "target": "PC-2",
       "properties": {
         "type": "ethernet",
         "source_port": "P3",
@@ -551,7 +561,7 @@
     },
     {
       "source": "NS-2",
-      "target": "MTR-1",
+      "target": "MET-1",
       "properties": {
         "type": "ethernet",
         "source_port": "P5",
@@ -563,7 +573,7 @@
     },
     {
       "source": "NS-2",
-      "target": "AP-1",
+      "target": "AP-2",
       "properties": {
         "type": "ethernet",
         "source_port": "P6",
