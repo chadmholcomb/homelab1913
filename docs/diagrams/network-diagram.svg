@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Home Networking Lab Diagram</title>
+  <desc>A visual representation of the home networking and controls development lab architecture.</desc>
+  <style>
+    .device { fill: #4CAF50; stroke: #333; stroke-width: 2; }
+    .link { stroke: #333; stroke-width: 2; }
+    .label { font-family: Arial, sans-serif; font-size: 14px; fill: #fff; }
+  </style>
+  
+  <rect x="50" y="50" width="150" height="100" class="device" />
+  <text x="125" y="100" text-anchor="middle" class="label">Router</text>
+  
+  <rect x="250" y="50" width="150" height="100" class="device" />
+  <text x="325" y="100" text-anchor="middle" class="label">Switch</text>
+  
+  <rect x="450" y="50" width="150" height="100" class="device" />
+  <text x="525" y="100" text-anchor="middle" class="label">Access Point</text>
+  
+  <rect x="50" y="200" width="150" height="100" class="device" />
+  <text x="125" y="250" text-anchor="middle" class="label">Smart Hub</text>
+  
+  <rect x="250" y="200" width="150" height="100" class="device" />
+  <text x="325" y="250" text-anchor="middle" class="label">Camera</text>
+  
+  <rect x="450" y="200" width="150" height="100" class="device" />
+  <text x="525" y="250" text-anchor="middle" class="label">Smart Light</text>
+  
+  <line x1="200" y1="100" x2="250" y2="100" class="link" />
+  <line x1="400" y1="100" x2="450" y2="100" class="link" />
+  <line x1="125" y1="150" x2="125" y2="200" class="link" />
+  <line x1="325" y1="150" x2="325" y2="200" class="link" />
+  <line x1="525" y1="150" x2="525" y2="200" class="link" />
+  
+  <a href="architecture.md">
+    <rect x="50" y="50" width="150" height="100" fill="transparent" />
+  </a>
+  <a href="devices.md">
+    <rect x="250" y="50" width="150" height="100" fill="transparent" />
+  </a>
+  <a href="devices.md">
+    <rect x="450" y="50" width="150" height="100" fill="transparent" />
+  </a>
+  <a href="devices.md">
+    <rect x="50" y="200" width="150" height="100" fill="transparent" />
+  </a>
+  <a href="devices.md">
+    <rect x="250" y="200" width="150" height="100" fill="transparent" />
+  </a>
+  <a href="devices.md">
+    <rect x="450" y="200" width="150" height="100" fill="transparent" />
+  </a>
+</svg>
