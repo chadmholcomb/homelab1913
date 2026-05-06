@@ -40,13 +40,13 @@ Core switch for the development environment. Connects all development-side devic
 | P5 | ethernet | access | TBD | TBD |
 | P6 | ethernet | access | TBD | TBD |
 | P7 | ethernet | access | TBD | TBD |
-| P8 | ethernet | trunk | TBD | Cross-connect to NS-2 P1 |
+| P8 | ethernet | access | TBD | TBD |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Management Access
 
 - **UniFi Controller:** https://10.0.0.103:8443 (running on PC-1)
-- **SSH:** `ssh ubnt@172.22.1.3` (default credentials)
+- **SSH:** `ssh ubnt@172.22.1.3` — credentials reset to ubnt/ubnt after factory reset; controller changes these on adoption. Check controller Settings → System for device SSH credentials after adoption.
 - **Firmware:** 6.4.19
 
 ## VLANs
@@ -63,3 +63,6 @@ Core switch for the development environment. Connects all development-side devic
 - AUX VLAN serves WiFi AP POWERFLEX-DMZ (2.4 GHz)
 - GUEST VLAN serves WiFi AP Public-fc5 (2.4 GHz)
 - UniFi controller hosted on PC-1 Docker container
+- UniFi DHCP manager shows Default network as 192.168.1.0/24 with third-party gateway — DHCP for 172.22.1.x is served by MOD-1 (Cradlepoint), not the switch
+- Access ports serve 172.22.1.x once switch is adopted and VLAN 2 config is restored; before adoption they fall back to Cradlepoint DHCP
+- Factory reset procedure: hold reset button 10-15s until LEDs cycle, then run set-inform from PC-1 (ssh ubnt@172.22.1.3 → set-inform http://172.22.1.40:8080/inform)
