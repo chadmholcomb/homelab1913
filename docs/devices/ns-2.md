@@ -33,14 +33,14 @@ Core switch for the Energy Management Assembly. Distributes PoE power and networ
 <!-- NETJSON:INTERFACES:START -->
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
-| P1 | ethernet | trunk | TBD | Cross-connect from NS-1 P8 |
-| P2 | ethernet | uplink | TBD | MOD-2 LAN |
-| P3 | ethernet | access | TBD | PC-2 |
-| P4 | ethernet | access | TBD | RTAC-1 |
-| P5 | ethernet | access | TBD | MET-1 |
+| P1 | ethernet | access | TBD | PC-2 (X4LAN) |
+| P2 | ethernet | access | TBD | TBD |
+| P3 | ethernet | access | TBD | TBD |
+| P4 | ethernet | access | TBD | RTAC-1 (ETH1) |
+| P5 | ethernet | access | TBD | MET-1 (ETH0) |
 | P6 | ethernet | access | TBD | AP-2 |
 | P7 | ethernet | access | TBD | DEV-1 (planned) |
-| P8 | ethernet | access | TBD | TBD |
+| P8 | ethernet | uplink | TBD | MOD-2 LAN |
 | SFP1 | sfp+ | reserved | TBD | TBD |
 | SFP2 | sfp+ | reserved | TBD | TBD |
 <!-- NETJSON:INTERFACES:END -->

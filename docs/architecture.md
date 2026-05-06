@@ -66,17 +66,16 @@ The EMA assembly is a self-contained unit on the gold-plate panel simulating a f
 
 | ID | Connection | A-End | A-Port | B-End | B-Port | Length | Cable Type | Notes |
 |----|-----------|-------|--------|-------|--------|--------|------------|-------|
-| C-01 | ETH | MOD-1 | eth0 | NS-1 | P1 | TBD | TBD | Dev environment LAN uplink |
-| C-02 | ETH | NS-1 | P2 | PC-1 | enp1s0 | TBD | TBD | |
-| C-03 | ETH | NS-1 | P8 | NS-2 | P1 | TBD | TBD | Cross-connect dev ↔ EMA |
-| C-04 | ETH | MOD-2 | eth0 | NS-2 | P2 | TBD | TBD | EMA assembly LAN uplink |
-| C-05 | ETH | NS-2 | P3 | PC-2 | eth0 | TBD | TBD | |
-| C-06 | ETH | NS-2 | P4 | RTAC-1 | ETH1 | TBD | TBD | |
-| C-07 | ETH | NS-2 | P5 | MET-1 | ETH0 | TBD | TBD | |
-| C-08 | ETH+PoE | NS-2 | P6 | AP-2 | eth0 | TBD | TBD | PoE powered from NS-2 |
-| C-09 | ETH | NS-2 | P7 | DEV-1 | ETH0 | TBD | TBD | Planned — not yet connected |
-| L-01 | LTE | WAN | — | MOD-1 | lte0 | N/A | Cellular | Dev environment WAN |
-| L-02 | LTE | WAN | — | MOD-2 | lte0 | N/A | Cellular | EMA assembly WAN |
+| C-01 | ETH | MOD-1 | LAN | NS-1 | P1 | TBD | TBD | Dev environment LAN uplink |
+| C-02 | ETH | NS-1 | P2 | PC-1 | LAN1 | TBD | TBD | |
+| C-03 | ETH | MOD-2 | LAN | NS-2 | P8 | TBD | TBD | EMA assembly LAN uplink |
+| C-04 | ETH | NS-2 | P1 | PC-2 | X4LAN | TBD | TBD | |
+| C-05 | ETH | NS-2 | P4 | RTAC-1 | ETH1 | TBD | TBD | |
+| C-06 | ETH | NS-2 | P5 | MET-1 | ETH0 | TBD | TBD | |
+| C-07 | ETH+PoE | NS-2 | P6 | AP-2 | eth0 | TBD | TBD | PoE powered from NS-2 |
+| C-08 | ETH | NS-2 | P7 | DEV-1 | ETH0 | TBD | TBD | Planned — not yet connected |
+| L-01 | LTE | WAN | — | MOD-1 | LTE | N/A | Cellular | Dev environment WAN |
+| L-02 | LTE | WAN | — | MOD-2 | LTE | N/A | Cellular | EMA assembly WAN |
 
 ---
 

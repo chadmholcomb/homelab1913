@@ -178,37 +178,37 @@
           {
             "name": "P1",
             "type": "ethernet",
-            "role": "trunk",
+            "role": "access",
             "addresses": [],
-            "notes": "Cross-connect from NS-1 P8"
+            "notes": "PC-2 (X4LAN)"
           },
           {
             "name": "P2",
             "type": "ethernet",
-            "role": "uplink",
+            "role": "access",
             "addresses": [],
-            "notes": "MOD-2 LAN"
+            "notes": "TBD"
           },
           {
             "name": "P3",
             "type": "ethernet",
             "role": "access",
             "addresses": [],
-            "notes": "PC-2"
+            "notes": "TBD"
           },
           {
             "name": "P4",
             "type": "ethernet",
             "role": "access",
             "addresses": [],
-            "notes": "RTAC-1"
+            "notes": "RTAC-1 (ETH1)"
           },
           {
             "name": "P5",
             "type": "ethernet",
             "role": "access",
             "addresses": [],
-            "notes": "MET-1"
+            "notes": "MET-1 (ETH0)"
           },
           {
             "name": "P6",
@@ -227,9 +227,9 @@
           {
             "name": "P8",
             "type": "ethernet",
-            "role": "access",
+            "role": "uplink",
             "addresses": [],
-            "notes": "TBD"
+            "notes": "MOD-2 LAN"
           },
           {
             "name": "SFP1",
@@ -506,7 +506,7 @@
       "target": "NS-1",
       "properties": {
         "type": "ethernet",
-        "source_interface": "eth0",
+        "source_interface": "LAN",
         "target_port": "P1",
         "media": "copper",
         "speed": "1Gbps",
@@ -526,24 +526,12 @@
       }
     },
     {
-      "source": "NS-1",
-      "target": "NS-2",
-      "properties": {
-        "type": "ethernet",
-        "source_port": "P8",
-        "target_port": "P1",
-        "media": "copper",
-        "speed": "1Gbps",
-        "notes": "Cross-connect between dev environment and EMA assembly"
-      }
-    },
-    {
       "source": "MOD-2",
       "target": "NS-2",
       "properties": {
         "type": "ethernet",
-        "source_interface": "eth0",
-        "target_port": "P2",
+        "source_interface": "LAN",
+        "target_port": "P8",
         "media": "copper",
         "speed": "1Gbps",
         "notes": ""
@@ -554,8 +542,8 @@
       "target": "PC-2",
       "properties": {
         "type": "ethernet",
-        "source_port": "P3",
-        "target_interface": "eth0",
+        "source_port": "P1",
+        "target_interface": "X4LAN",
         "media": "copper",
         "speed": "1Gbps",
         "notes": ""
