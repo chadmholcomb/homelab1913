@@ -41,32 +41,34 @@ graph LR
     NS2 -->|"P6"| AP2
     NS2 -.->|"P7 planned"| DEV1
 
-    click MOD1 "docs/devices/cradlepoint-ibr600.md"
-    click MOD2 "docs/devices/cradlepoint-s700.md"
-    click NS1 "docs/devices/ubiquiti-usw-lite-8-poe.md"
-    click NS2 "docs/devices/ubiquiti-usw-pro-8-poe.md"
-    click PC1 "docs/devices/weidian-mini-pc.md"
-    click PC2 "docs/devices/phoenix-contact-pc.md"
-    click AP2 "docs/devices/wifi-ap.md"
-    click RTAC1 "docs/devices/sel-rtac-3505.md"
-    click MET1 "docs/devices/egauge-4015.md"
-    click DEV1 "docs/devices/arduino-opta.md"
+    click MOD1 "docs/devices/mod-1.md"
+    click MOD2 "docs/devices/mod-2.md"
+    click NS1 "docs/devices/ns-1.md"
+    click NS2 "docs/devices/ns-2.md"
+    click PC1 "docs/devices/pc-1.md"
+    click PC2 "docs/devices/pc-2.md"
+    click AP2 "docs/devices/ap-2.md"
+    click RTAC1 "docs/devices/rtac-1.md"
+    click MET1 "docs/devices/met-1.md"
+    click DEV1 "docs/devices/dev-1.md"
 ```
 
 ## Device Registry
 
+<!-- NETJSON:REGISTRY:START -->
 | Tag | Device | Type | Segment | MAC Address | Serial Number |
 |-----|--------|------|---------|-------------|---------------|
-| [MOD-1](docs/devices/cradlepoint-ibr600.md) | Cradlepoint IBR600 | LTE Router | Development | TBD | TBD |
-| [PC-1](docs/devices/weidian-mini-pc.md) | Fanless PC | Linux Server | Development | TBD | TBD |
-| [NS-1](docs/devices/ubiquiti-usw-lite-8-poe.md) | Ubiquiti USW-Lite-8-PoE | Managed Switch | Development | TBD | TBD |
-| [MOD-2](docs/devices/cradlepoint-s700.md) | Cradlepoint S700 | 5G/LTE Router | EMA Assembly | TBD | TBD |
-| [NS-2](docs/devices/ubiquiti-usw-pro-8-poe.md) | Ubiquiti USW-Pro-8-PoE 120W | Managed Switch | EMA Assembly | TBD | TBD |
-| [PC-2](docs/devices/phoenix-contact-pc.md) | Phoenix Contact PC | Industrial PC | EMA Assembly | TBD | TBD |
-| [AP-2](docs/devices/wifi-ap.md) | WiFi Access Point | Wireless AP | EMA Assembly | TBD | TBD |
-| [RTAC-1](docs/devices/sel-rtac-3505.md) | SEL RTAC 3505 | Automation Controller | Target Hardware | TBD | TBD |
-| [MET-1](docs/devices/egauge-4015.md) | eGauge 4015 | Power Meter | Target Hardware | TBD | TBD |
-| [DEV-1](docs/devices/arduino-opta.md) | Arduino OPTA | Industrial PLC / Test Device | Target Hardware | TBD | TBD |
+| [MOD-1](docs/devices/mod-1.md) | Cradlepoint IBR600 | LTE Cellular Router | Development | 00:30:44:70:3F:C5 | IMEI: 865 4930 4342 5942 |
+| [MOD-2](docs/devices/mod-2.md) | Cradlepoint S700 | 5G/LTE Branch Router | EMA Assembly | TBD | TBD |
+| [NS-1](docs/devices/ns-1.md) | Ubiquiti USW-Lite-8-PoE | Managed Layer 2 PoE Switch | Development | 0C:EA:14:7F:BC:92 | TBD |
+| [NS-2](docs/devices/ns-2.md) | Ubiquiti USW-Pro-8-PoE 120W | Managed Layer 2/3 PoE Switch | EMA Assembly | TBD | TBD |
+| [PC-1](docs/devices/pc-1.md) | Fanless PC | Industrial Fanless Mini PC | Development | 8c:03:60:4c:d5:fa | TBD |
+| [PC-2](docs/devices/pc-2.md) | Phoenix Contact PC | Industrial DIN-Rail PC | EMA Assembly | TBD | TBD |
+| [AP-2](docs/devices/ap-2.md) | WiFi Access Point | Wireless Access Point | EMA Assembly | TBD | TBD |
+| [RTAC-1](docs/devices/rtac-1.md) | SEL RTAC 3505 | Real-Time Automation Controller | Target Hardware | TBD | TBD |
+| [MET-1](docs/devices/met-1.md) | eGauge 4015 | Revenue-Grade Power Meter | Target Hardware | TBD | TBD |
+| [DEV-1](docs/devices/dev-1.md) | Arduino OPTA | Industrial Programmable Logic Controller | Target Hardware | TBD | TBD |
+<!-- NETJSON:REGISTRY:END -->
 
 ## Repository Structure
 
@@ -101,8 +103,9 @@ These sections are **overwritten** every time `sync-device-docs.py` runs:
 | What | Marker |
 |------|--------|
 | Device doc H1 title | First `# ` line — format: `# TAG — Label` |
-| Device info table | `<!-- NETJSON:START -->` … `<!-- NETJSON:END -->` |
-| Interface/port table | `<!-- NETJSON:INTERFACES:START -->` … `<!-- NETJSON:INTERFACES:END -->` |
+| Device info table | `NETJSON:START` … `NETJSON:END` HTML comments |
+| Interface/port table | `NETJSON:INTERFACES:START` … `NETJSON:INTERFACES:END` HTML comments |
+| README device registry | `NETJSON:REGISTRY:START` … `NETJSON:REGISTRY:END` HTML comments |
 
 ### Workflow for updating network config
 

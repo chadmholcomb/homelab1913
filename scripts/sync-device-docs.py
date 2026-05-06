@@ -91,6 +91,56 @@ def render_interfaces_block(node: dict) -> str:
     return "\n".join(lines)
 
 
+SEGMENT_SHORT = {
+    "development": "Development",
+    "ema": "EMA Assembly",
+    "target": "Target Hardware",
+}
+
+
+def render_registry_block(nodes: list) -> str:
+    lines = [
+        "<!-- NETJSON:REGISTRY:START -->",
+        "| Tag | Device | Type | Segment | MAC Address | Serial Number |",
+        "|-----|--------|------|---------|-------------|---------------|",
+    ]
+    for node in nodes:
+        p = node.get("properties", {})
+        doc = p.get("doc", "")
+        tag = node["id"]
+        label = node["label"]
+        device_type = p.get("type") or "TBD"
+        segment = SEGMENT_SHORT.get(p.get("segment", ""), p.get("segment") or "TBD")
+        mac = p.get("mac_address") or "TBD"
+        serial = p.get("serial_number") or "TBD"
+        link = f"[{tag}]({doc})" if doc else tag
+        lines.append(f"| {link} | {label} | {device_type} | {segment} | {mac} | {serial} |")
+    lines.append("<!-- NETJSON:REGISTRY:END -->")
+    return "\n".join(lines)
+
+
+def update_registry(readme_path: Path, nodes: list, dry_run: bool = False) -> bool:
+    if not readme_path.exists():
+        print(f"  SKIP  {readme_path.name} — file not found")
+        return False
+    content = readme_path.read_text()
+    original = content
+    pat = r"<!-- NETJSON:REGISTRY:START -->.*?<!-- NETJSON:REGISTRY:END -->"
+    if not re.search(pat, content, re.DOTALL):
+        print(f"  WARN  {readme_path.name} — NETJSON:REGISTRY marker missing, skipped")
+        return False
+    content = re.sub(pat, render_registry_block(nodes), content, count=1, flags=re.DOTALL)
+    if content == original:
+        print(f"  OK    {readme_path.name} — no changes needed")
+        return False
+    if not dry_run:
+        readme_path.write_text(content)
+        print(f"  WROTE {readme_path.name}")
+    else:
+        print(f"  WOULD UPDATE {readme_path.name} (dry run)")
+    return True
+
+
 # ---------------------------------------------------------------------------
 # File update
 # ---------------------------------------------------------------------------
@@ -279,6 +329,10 @@ def main():
         print(f"[{node['id']}] {doc_rel}")
         if update_file(md_path, node, dry_run):
             updated += 1
+
+    print(f"\n[README] README.md")
+    if update_registry(REPO_ROOT / "README.md", nodes, dry_run):
+        updated += 1
 
     action = "would update" if dry_run else "updated"
     print(f"\nDone — {action} {updated} file(s), skipped {skipped}.")
