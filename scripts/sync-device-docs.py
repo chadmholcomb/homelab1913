@@ -36,7 +36,8 @@ SEGMENT_LABELS = {
 TAG_PATTERN = re.compile(r'\b([A-Z]{2,6}-\d+)\b')
 
 # Interface/protocol technology names that match the tag pattern but are not tags
-KNOWN_NON_TAGS = {"RS-232", "RS-485", "RS-422", "RS-423", "RS-449"}
+KNOWN_NON_TAGS = {"RS-232", "RS-485", "RS-422", "RS-423", "RS-449",
+                  "HDMI-1", "HDMI-2", "DP-1", "DP-2", "EDP-1", "eDP-1"}
 
 
 # ---------------------------------------------------------------------------

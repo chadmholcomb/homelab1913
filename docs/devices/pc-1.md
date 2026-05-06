@@ -8,12 +8,12 @@
 | **Model** | TBD |
 | **Type** | Industrial Fanless Mini PC |
 | **Segment** | Development Environment |
-| **Hostname** | TBD |
-| **IP Address** | TBD |
-| **MAC Address** | TBD |
+| **Hostname** | chad-lab1913 |
+| **IP Address** | 172.22.1.40 |
+| **MAC Address** | 8c:03:60:4c:d5:fa |
 | **Serial Number** | TBD |
 | **Management** | SSH |
-| **Management URL** | TBD |
+| **Management URL** | ssh chad@172.22.1.40 |
 <!-- NETJSON:END -->
 
 ## Role
@@ -40,7 +40,9 @@ General-purpose Linux environment for tooling development and log aggregation. S
 <!-- NETJSON:INTERFACES:START -->
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
-| eth0 | ethernet | lan | TBD | NS-1 P2 |
+| enp1s0 | ethernet | lan | 172.22.1.40/24 | NS-1 P2 — primary lab network |
+| enp2s0 | ethernet | lan | TBD | spare, unplugged |
+| wlp3s0 | wifi | mgmt | 10.0.0.103/24 | home network WiFi — DHCP, backup access |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Physical Connections

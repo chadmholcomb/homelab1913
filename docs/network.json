@@ -20,7 +20,7 @@
         "management_platform": "NetCloud Manager",
         "management_url": null,
         "firmware_version": null,
-        "doc": "docs/devices/cradlepoint-ibr600.md",
+        "doc": "docs/devices/mod-1.md",
         "interfaces": [
           {
             "name": "lte0",
@@ -57,7 +57,7 @@
         "management_platform": "NetCloud Manager",
         "management_url": null,
         "firmware_version": null,
-        "doc": "docs/devices/cradlepoint-s700.md",
+        "doc": "docs/devices/mod-2.md",
         "interfaces": [
           {
             "name": "lte0",
@@ -94,7 +94,7 @@
         "management_platform": "UniFi Network Controller",
         "management_url": "https://10.0.0.103:8443",
         "firmware_version": "6.4.19",
-        "doc": "docs/devices/ubiquiti-usw-lite-8-poe.md",
+        "doc": "docs/devices/ns-1.md",
         "interfaces": [
           {
             "name": "P1",
@@ -173,7 +173,7 @@
         "management_platform": "UniFi Network Controller",
         "management_url": null,
         "firmware_version": null,
-        "doc": "docs/devices/ubiquiti-usw-pro-8-poe.md",
+        "doc": "docs/devices/ns-2.md",
         "interfaces": [
           {
             "name": "P1",
@@ -266,7 +266,7 @@
         "management_platform": "SSH",
         "management_url": "ssh chad@172.22.1.40",
         "firmware_version": null,
-        "doc": "docs/devices/weidian-mini-pc.md",
+        "doc": "docs/devices/pc-1.md",
         "interfaces": [
           {
             "name": "enp1s0",
@@ -310,7 +310,7 @@
         "management_platform": null,
         "management_url": null,
         "firmware_version": null,
-        "doc": "docs/devices/phoenix-contact-pc.md",
+        "doc": "docs/devices/pc-2.md",
         "interfaces": [
           {
             "name": "eth0",
@@ -340,7 +340,7 @@
         "management_platform": "TBD",
         "management_url": null,
         "firmware_version": null,
-        "doc": "docs/devices/wifi-ap.md",
+        "doc": "docs/devices/ap-2.md",
         "interfaces": [
           {
             "name": "eth0",
@@ -377,7 +377,7 @@
         "management_platform": "AcSELerator RTAC",
         "management_url": null,
         "firmware_version": null,
-        "doc": "docs/devices/sel-rtac-3505.md",
+        "doc": "docs/devices/rtac-1.md",
         "interfaces": [
           {
             "name": "ETH1",
@@ -428,7 +428,7 @@
         "management_platform": "Web UI / REST API",
         "management_url": null,
         "firmware_version": null,
-        "doc": "docs/devices/egauge-4015.md",
+        "doc": "docs/devices/met-1.md",
         "interfaces": [
           {
             "name": "ETH0",
@@ -458,7 +458,7 @@
         "management_platform": "Arduino IDE / Arduino Cloud",
         "management_url": null,
         "firmware_version": null,
-        "doc": "docs/devices/arduino-opta.md",
+        "doc": "docs/devices/dev-1.md",
         "interfaces": [
           {
             "name": "ETH0",

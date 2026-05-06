@@ -9,11 +9,11 @@
 | **Type** | Managed Layer 2 PoE Switch |
 | **Segment** | Development Environment |
 | **Hostname** | TBD |
-| **IP Address** | TBD |
+| **IP Address** | 172.22.1.3 |
 | **MAC Address** | 0C:EA:14:7F:BC:92 |
 | **Serial Number** | TBD |
 | **Management** | UniFi Network Controller |
-| **Management URL** | TBD |
+| **Management URL** | https://10.0.0.103:8443 |
 <!-- NETJSON:END -->
 
 ## Role
@@ -34,7 +34,7 @@ Core switch for the development environment. Connects all development-side devic
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
 | P1 | ethernet | uplink | TBD | MOD-1 LAN |
-| P2 | ethernet | access | TBD | PC-1 |
+| P2 | ethernet | access | 172.22.1.40 | PC-1 (enp1s0) |
 | P3 | ethernet | access | TBD | TBD |
 | P4 | ethernet | access | TBD | TBD |
 | P5 | ethernet | access | TBD | TBD |
