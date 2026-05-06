@@ -29,17 +29,17 @@ graph LR
         DEV1["DEV-1\nPLC (WIP)"]
     end
 
-    WAN -->|"LTE · MOD-1:lte0"| MOD1
-    WAN -->|"LTE · MOD-2:lte0"| MOD2
-    MOD1 -->|"ETH · MOD-1:eth0 ↔ NS-1:P1"| NS1
-    NS1 -->|"ETH · NS-1:P2 ↔ PC-1:enp1s0"| PC1
-    NS1 -->|"ETH · NS-1:P8 ↔ NS-2:P1"| NS2
-    MOD2 -->|"ETH · MOD-2:eth0 ↔ NS-2:P2"| NS2
-    NS2 -->|"ETH · NS-2:P3 ↔ PC-2:eth0"| PC2
-    NS2 -->|"ETH · NS-2:P4 ↔ RTAC-1:ETH1"| RTAC1
-    NS2 -->|"ETH · NS-2:P5 ↔ MET-1:ETH0"| MET1
-    NS2 -->|"ETH+PoE · NS-2:P6 ↔ AP-2:eth0"| AP2
-    NS2 -.->|"ETH · NS-2:P7 ↔ DEV-1:ETH0 (planned)"| DEV1
+    WAN -->|"LTE - MOD-1:lte0"| MOD1
+    WAN -->|"LTE - MOD-2:lte0"| MOD2
+    MOD1 -->|"ETH - MOD-1:eth0 -- NS-1:P1"| NS1
+    NS1 -->|"ETH - NS-1:P2 -- PC-1:enp1s0"| PC1
+    NS1 -->|"ETH - NS-1:P8 -- NS-2:P1"| NS2
+    MOD2 -->|"ETH - MOD-2:eth0 -- NS-2:P2"| NS2
+    NS2 -->|"ETH - NS-2:P3 -- PC-2:eth0"| PC2
+    NS2 -->|"ETH - NS-2:P4 -- RTAC-1:ETH1"| RTAC1
+    NS2 -->|"ETH - NS-2:P5 -- MET-1:ETH0"| MET1
+    NS2 -->|"ETH+PoE - NS-2:P6 -- AP-2:eth0"| AP2
+    NS2 -.->|"ETH - NS-2:P7 -- DEV-1:ETH0 planned"| DEV1
 
     click MOD1 "docs/devices/mod-1.md"
     click MOD2 "docs/devices/mod-2.md"
