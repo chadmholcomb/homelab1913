@@ -1,4 +1,4 @@
-# Cradlepoint S700
+# MOD-2 — Cradlepoint S700
 
 <!-- NETJSON:START -->
 | Field | Value |

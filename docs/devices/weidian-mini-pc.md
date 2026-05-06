@@ -1,4 +1,4 @@
-# Weidian Mini PC
+# PC-1 — Fanless PC
 
 <!-- NETJSON:START -->
 | Field | Value |
@@ -27,9 +27,12 @@ General-purpose Linux environment for tooling development and log aggregation. S
 
 ## Key Specs
 
-- TBD — CPU, RAM, storage
+- **CPU:** Intel Core i7-10810U @ 1.10GHz (6 cores / 12 threads)
+- **RAM:** 32 GB
+- **Storage:** 915 GB NVMe (WD Green SN350 1TB) — 27 GB used
+- **OS:** Ubuntu 24.04.2 LTS (Noble Numbat)
 - Fanless industrial form factor
-- Multiple GbE Ethernet ports
+- 2x GbE Ethernet ports + WiFi
 - USB and serial interfaces
 
 ## Interfaces
@@ -42,19 +45,35 @@ General-purpose Linux environment for tooling development and log aggregation. S
 
 ## Physical Connections
 
-- **eth0:** → NS-1 (USW-Lite-8-PoE) Port P2
+- **enp1s0:** → NS-1 (USW-Lite-8-PoE) Port P2 (connected, 172.22.1.40)
+- **enp2s0:** spare, unplugged
+- **wlp3s0:** WiFi, home network (10.0.0.103, secondary/backup access)
 
 ## Installed Software
 
 | Tool | Purpose |
 |------|---------|
-| TBD | TBD |
+| Docker | Container runtime (docker0 bridge at 172.17.0.1) |
+| SSH server | Remote management |
+| unifi_controller | UniFi Network controller (jacobalberty/unifi:latest) — manages lab switches/APs |
+| unifi_mongo | MongoDB 3.6 — UniFi controller database (internal only, port 27017) |
+| unifi_logs | Log sidecar for UniFi |
+
+## Services
+
+| Service | URL | Notes |
+|---------|-----|-------|
+| UniFi Controller | https://10.0.0.103:8443 or https://172.22.1.40:8443 | Self-signed cert; manages all lab network gear |
 
 ## Management Access
 
-- **SSH:** `ssh <user>@<IP>`
-- **Console:** TBD (serial or direct)
+- **SSH:** `ssh chad@172.22.1.40` (lab network) or `ssh chad@10.0.0.103` (WiFi DHCP — may change)
+- **Console:** HDMI + USB keyboard; BIOS boot override via F10 → Boot Override
 
 ## Notes
 
-TBD
+- WiFi IP (10.0.0.103) is DHCP-assigned — consider setting a DHCP reservation for stable backup access
+- enp1s0 also has a secondary address 192.168.0.40/24 — origin unknown, investigate and clean up
+- **HDMI display fix (resolved):** eDP-1 connector falsely reported as connected, causing GDM3 to render the login screen on a non-existent internal display. Fixed by: (1) disabling Wayland (`/etc/gdm3/custom.conf` → `WaylandEnable=false`), (2) allowing Xorg for all users (`/etc/X11/Xwrapper.config` → `allowed_users=anybody`), (3) creating `/etc/X11/xorg.conf.d/10-display.conf` to ignore eDP-1 and set HDMI-1 as primary. Workaround if needed: `Ctrl+Alt+F2` for TTY, then `sudo -u gdm DISPLAY=:0 XAUTHORITY=/run/user/120/gdm/Xauthority xrandr --output eDP-1 --off --output HDMI-1 --primary --auto`.
+- SGX disabled/unsupported per BIOS (non-critical kernel message on boot)
+- NS-1 adoption fix: if switch shows "Adopting/Unreachable", SSH to switch (`ssh ubnt@172.22.1.3`) and run `set-inform http://172.22.1.40:8080/inform` twice — switch will reboot and connect

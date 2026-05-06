@@ -1,4 +1,4 @@
-# Phoenix Contact Industrial PC
+# PC-2 — Phoenix Contact PC
 
 <!-- NETJSON:START -->
 | Field | Value |

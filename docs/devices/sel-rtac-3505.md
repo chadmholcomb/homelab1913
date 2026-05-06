@@ -1,4 +1,4 @@
-# SEL RTAC 3505
+# RTAC-1 — SEL RTAC 3505
 
 <!-- NETJSON:START -->
 | Field | Value |
@@ -56,7 +56,7 @@ Will be tested against via DEV-1 (Arduino OPTA).
 
 | Protocol | Role | Connected Device | Notes |
 |----------|------|-----------------|-------|
-| Modbus TCP | Client | MTR-1 (eGauge 4015) | TBD — register map |
+| Modbus TCP | Client | MET-1 (eGauge 4015) | TBD — register map |
 | TBD | TBD | TBD | |
 
 ## Management Access

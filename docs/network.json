@@ -15,8 +15,8 @@
         "type": "LTE Cellular Router",
         "segment": "development",
         "hostname": null,
-        "mac_address": null,
-        "serial_number": null,
+        "mac_address": "00:30:44:70:3F:C5",
+        "serial_number": "IMEI: 865 4930 4342 5942",
         "management_platform": "NetCloud Manager",
         "management_url": null,
         "firmware_version": null,
@@ -81,7 +81,7 @@
     {
       "id": "NS-1",
       "label": "Ubiquiti USW-Lite-8-PoE",
-      "local_addresses": [],
+      "local_addresses": ["172.22.1.3"],
       "properties": {
         "tag": "NS-1",
         "manufacturer": "Ubiquiti",
@@ -89,11 +89,11 @@
         "type": "Managed Layer 2 PoE Switch",
         "segment": "development",
         "hostname": null,
-        "mac_address": null,
+        "mac_address": "0C:EA:14:7F:BC:92",
         "serial_number": null,
         "management_platform": "UniFi Network Controller",
-        "management_url": null,
-        "firmware_version": null,
+        "management_url": "https://10.0.0.103:8443",
+        "firmware_version": "6.4.19",
         "doc": "docs/devices/ubiquiti-usw-lite-8-poe.md",
         "interfaces": [
           {
@@ -107,8 +107,8 @@
             "name": "P2",
             "type": "ethernet",
             "role": "access",
-            "addresses": [],
-            "notes": "PC-1"
+            "addresses": ["172.22.1.40"],
+            "notes": "PC-1 (enp1s0)"
           },
           {
             "name": "P3",
@@ -253,31 +253,45 @@
     {
       "id": "PC-1",
       "label": "Fanless PC",
-      "local_addresses": [],
+      "local_addresses": ["172.22.1.40"],
       "properties": {
         "tag": "PC-1",
         "manufacturer": "Weidian",
         "model": null,
         "type": "Industrial Fanless Mini PC",
         "segment": "development",
-        "hostname": null,
-        "mac_address": null,
+        "hostname": "chad-lab1913",
+        "mac_address": "8c:03:60:4c:d5:fa",
         "serial_number": null,
         "management_platform": "SSH",
-        "management_url": null,
+        "management_url": "ssh chad@172.22.1.40",
         "firmware_version": null,
         "doc": "docs/devices/weidian-mini-pc.md",
         "interfaces": [
           {
-            "name": "eth0",
+            "name": "enp1s0",
+            "type": "ethernet",
+            "role": "lan",
+            "addresses": ["172.22.1.40/24"],
+            "notes": "NS-1 P2 — primary lab network"
+          },
+          {
+            "name": "enp2s0",
             "type": "ethernet",
             "role": "lan",
             "addresses": [],
-            "notes": "NS-1 P2"
+            "notes": "spare, unplugged"
+          },
+          {
+            "name": "wlp3s0",
+            "type": "wifi",
+            "role": "mgmt",
+            "addresses": ["10.0.0.103/24"],
+            "notes": "home network WiFi — DHCP, backup access"
           }
         ],
         "protocols": [],
-        "notes": "General-purpose Linux tooling and log aggregation host"
+        "notes": "General-purpose Linux tooling and log aggregation host. Ubuntu 24.04.2 LTS. i7-10810U, 32GB RAM, 915GB NVMe."
       }
     },
     {
@@ -505,7 +519,7 @@
       "properties": {
         "type": "ethernet",
         "source_port": "P2",
-        "target_interface": "eth0",
+        "target_interface": "enp1s0",
         "media": "copper",
         "speed": "1Gbps",
         "notes": ""

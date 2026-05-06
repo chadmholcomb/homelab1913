@@ -1,4 +1,4 @@
-# eGauge 4015
+# MET-1 — eGauge 4015
 
 <!-- NETJSON:START -->
 | Field | Value |

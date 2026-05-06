@@ -1,4 +1,4 @@
-# Ubiquiti USW-Lite-8-PoE
+# NS-1 — Ubiquiti USW-Lite-8-PoE
 
 <!-- NETJSON:START -->
 | Field | Value |
@@ -10,7 +10,7 @@
 | **Segment** | Development Environment |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
-| **MAC Address** | TBD |
+| **MAC Address** | 0C:EA:14:7F:BC:92 |
 | **Serial Number** | TBD |
 | **Management** | UniFi Network Controller |
 | **Management URL** | TBD |
@@ -45,9 +45,21 @@ Core switch for the development environment. Connects all development-side devic
 
 ## Management Access
 
-- **UniFi Controller:** TBD (controller IP/URL)
-- **SSH:** `ssh admin@<IP>`
+- **UniFi Controller:** https://10.0.0.103:8443 (running on PC-1)
+- **SSH:** `ssh ubnt@172.22.1.3` (default credentials)
+- **Firmware:** 6.4.19
+
+## VLANs
+
+| VLAN | Name | Subnet | Gateway | Ports |
+|------|------|--------|---------|-------|
+| 2 | lan (Primary LAN) | 172.22.1.0/24 | 172.22.1.1 (MOD-1) | 1U, 2U |
+| 168 | AUX | 192.168.168.0/24 | 192.168.168.1 | 1T |
+| 20 | GUEST | 192.168.20.0/24 | 192.168.20.1 | 1T |
 
 ## Notes
 
-TBD
+- Primary LAN routed via Cradlepoint IBR600 (MOD-1) at 172.22.1.1
+- AUX VLAN serves WiFi AP POWERFLEX-DMZ (2.4 GHz)
+- GUEST VLAN serves WiFi AP Public-fc5 (2.4 GHz)
+- UniFi controller hosted on PC-1 Docker container

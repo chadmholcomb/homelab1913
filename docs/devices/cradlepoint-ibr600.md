@@ -1,4 +1,4 @@
-# Cradlepoint IBR600
+# MOD-1 — Cradlepoint IBR600
 
 <!-- NETJSON:START -->
 | Field | Value |
@@ -10,8 +10,8 @@
 | **Segment** | Development Environment |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
-| **MAC Address** | TBD |
-| **Serial Number** | TBD |
+| **MAC Address** | 00:30:44:70:3F:C5 |
+| **Serial Number** | IMEI: 865 4930 4342 5942 |
 | **Management** | NetCloud Manager |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->

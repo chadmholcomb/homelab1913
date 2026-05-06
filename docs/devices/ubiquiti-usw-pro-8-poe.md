@@ -1,4 +1,4 @@
-# Ubiquiti USW-Pro-8-PoE 120W
+# NS-2 — Ubiquiti USW-Pro-8-PoE 120W
 
 <!-- NETJSON:START -->
 | Field | Value |

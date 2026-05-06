@@ -1,4 +1,4 @@
-# Arduino OPTA
+# DEV-1 — Arduino OPTA
 
 <!-- NETJSON:START -->
 | Field | Value |
@@ -20,9 +20,9 @@
 
 Industrial-grade Arduino used as a test and simulation device. Intended to act as a programmable client/master to exercise and validate the target hardware in this lab:
 
-- **IPC-1** (Phoenix Contact PC) — TBD protocol/connection
+- **PC-2** (Phoenix Contact PC) — TBD protocol/connection
 - **RTAC-1** (SEL RTAC 3505) — TBD protocol/connection
-- **MTR-1** (eGauge 4015) — TBD protocol/connection
+- **MET-1** (eGauge 4015) — TBD protocol/connection
 
 > This device is a work in progress. Connections and test programs are not yet defined.
 
@@ -50,9 +50,9 @@ Industrial-grade Arduino used as a test and simulation device. Intended to act a
 
 | Interface | Target | Protocol | Purpose |
 |-----------|--------|----------|---------|
-| ETH0 / RS-485 | IPC-1 | TBD | TBD |
+| ETH0 / RS-485 | PC-2 | TBD | TBD |
 | ETH0 / RS-485 | RTAC-1 | TBD | TBD |
-| ETH0 | MTR-1 | Modbus TCP | TBD |
+| ETH0 | MET-1 | Modbus TCP | TBD |
 
 ## Management Access
 

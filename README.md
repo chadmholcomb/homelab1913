@@ -83,4 +83,39 @@ scripts/
   collect-logs.sh      — Log collection automation
 ```
 
-> To update device network config: edit `docs/network.json`, then run `python3 scripts/sync-device-docs.py`.
+---
+
+## Editing This Repository
+
+### Edit manually
+| File / Section | What belongs here |
+|----------------|-------------------|
+| `docs/network.json` | IPs, MACs, serial numbers, hostnames, port assignments, link topology |
+| `docs/architecture.md` | All content — narrative architecture, topology diagram, protocol overview |
+| Device doc **narrative sections** | Role description, Key Specs, Physical Connections, Protocol Map, Management Access, Notes |
+| `observability/` | Logging and monitoring strategy docs |
+
+### Do NOT edit manually (code-driven)
+These sections are **overwritten** every time `sync-device-docs.py` runs:
+
+| What | Marker |
+|------|--------|
+| Device doc H1 title | First `# ` line — format: `# TAG — Label` |
+| Device info table | `<!-- NETJSON:START -->` … `<!-- NETJSON:END -->` |
+| Interface/port table | `<!-- NETJSON:INTERFACES:START -->` … `<!-- NETJSON:INTERFACES:END -->` |
+
+### Workflow for updating network config
+
+```bash
+# 1. Edit the source of truth
+$EDITOR docs/network.json
+
+# 2. Propagate to all device docs
+python3 scripts/sync-device-docs.py
+
+# 3. Check for inconsistencies (stale tags, missing markers, broken links)
+python3 scripts/sync-device-docs.py --validate
+
+# 4. Commit everything together
+git add docs/network.json docs/devices/ && git commit
+```

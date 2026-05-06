@@ -1,4 +1,4 @@
-# WiFi Access Point
+# AP-2 — WiFi Access Point
 
 <!-- NETJSON:START -->
 | Field | Value |
