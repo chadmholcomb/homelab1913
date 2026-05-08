@@ -10,7 +10,7 @@ Documentation and observability repository for an industrial automation and ener
 graph LR
     WAN(["Internet / LTE"])
 
-    subgraph DEV["Development Environment"]
+    subgraph DEV["Development Subsystem"]
         MOD1["MOD-1\nModem / Router"]
         NS1["NS-1\nSwitch"]
         PC1["PC-1\nLinux PC"]
@@ -29,8 +29,8 @@ graph LR
         DEV1["DEV-1\nPLC (WIP)"]
     end
 
-    WAN -->|"LTE - MOD-1:lte0"| MOD1
-    WAN -->|"LTE - MOD-2:lte0"| MOD2
+    WAN ==> MOD1
+    WAN ==> MOD2
     MOD1 -->|"ETH - MOD-1:LAN -- NS-1:P1"| NS1
     NS1 -->|"ETH - NS-1:P2 -- PC-1:LAN1"| PC1
     MOD2 -->|"ETH - MOD-2:LAN -- NS-2:P8"| NS2
@@ -43,21 +43,47 @@ graph LR
 
 ```
 
+**Connection Types**
+
+| Line Style | Medium | Port Labels | Notes |
+|------------|--------|-------------|-------|
+| `A --> B` solid arrow | Ethernet | Yes — `SRC:port -- DST:port` | Physical copper cable |
+| `A ==> B` thick arrow | Cellular / LTE / 5G | No | Wireless WAN — no physical cable |
+| `A -.-> B` dotted arrow | WiFi | No | Wireless LAN *(reserved — not yet used)* |
+| `A --o B` circle-end | RS-485 / Serial | Yes | Physical serial cable *(reserved — not yet used)* |
+| `A -.-> B` dotted arrow with label | Planned / inactive | Yes | Link defined, not yet physically connected |
+
+See [docs/architecture.md](docs/architecture.md) for the full connection type standard.
+
 ## Device Registry
 
 <!-- NETJSON:REGISTRY:START -->
-| Tag | Device | Type | Segment | MAC Address | Serial Number |
-|-----|--------|------|---------|-------------|---------------|
-| [MOD-1](docs/devices/mod-1.md) | Cradlepoint IBR600 | LTE Cellular Router | Development | 00:30:44:70:3F:C5 | IMEI: 865 4930 4342 5942 |
-| [MOD-2](docs/devices/mod-2.md) | Cradlepoint S700 | 5G/LTE Branch Router | EMA Assembly | TBD | TBD |
-| [NS-1](docs/devices/ns-1.md) | Ubiquiti USW-Lite-8-PoE | Managed Layer 2 PoE Switch | Development | 0C:EA:14:7F:BC:92 | TBD |
-| [NS-2](docs/devices/ns-2.md) | Ubiquiti USW-Pro-8-PoE 120W | Managed Layer 2/3 PoE Switch | EMA Assembly | TBD | TBD |
-| [PC-1](docs/devices/pc-1.md) | Fanless PC | Industrial Fanless Mini PC | Development | 8c:03:60:4c:d5:fa | TBD |
-| [PC-2](docs/devices/pc-2.md) | Phoenix Contact PC | Industrial DIN-Rail PC | EMA Assembly | TBD | TBD |
-| [AP-2](docs/devices/ap-2.md) | WiFi Access Point | Wireless Access Point | EMA Assembly | TBD | TBD |
-| [RTAC-1](docs/devices/rtac-1.md) | SEL RTAC 3505 | Real-Time Automation Controller | Target Hardware | TBD | TBD |
-| [MET-1](docs/devices/met-1.md) | eGauge 4015 | Revenue-Grade Power Meter | Target Hardware | TBD | TBD |
-| [DEV-1](docs/devices/dev-1.md) | Arduino OPTA | Industrial Programmable Logic Controller | Target Hardware | TBD | TBD |
+
+**Development Subsystem**
+
+| Tag | Device | Type | MAC Address | Serial Number |
+|-----|--------|------|-------------|---------------|
+| [MOD-1](docs/devices/mod-1.md) | Cradlepoint IBR600 | LTE Cellular Router | 00:30:44:70:3F:C5 | IMEI: 865 4930 4342 5942 |
+| [NS-1](docs/devices/ns-1.md) | Ubiquiti USW-Lite-8-PoE | Managed Layer 2 PoE Switch | 0C:EA:14:7F:BC:92 | TBD |
+| [PC-1](docs/devices/pc-1.md) | Fanless PC | Industrial Fanless Mini PC | 8c:03:60:4c:d5:fa | TBD |
+
+**Energy Management Assembly**
+
+| Tag | Device | Type | MAC Address | Serial Number |
+|-----|--------|------|-------------|---------------|
+| [AP-2](docs/devices/ap-2.md) | WiFi Access Point | Wireless Access Point | TBD | TBD |
+| [MOD-2](docs/devices/mod-2.md) | Cradlepoint S700 | 5G/LTE Branch Router | TBD | TBD |
+| [NS-2](docs/devices/ns-2.md) | Ubiquiti USW-Pro-8-PoE 120W | Managed Layer 2/3 PoE Switch | TBD | TBD |
+| [PC-2](docs/devices/pc-2.md) | Phoenix Contact PC | Industrial DIN-Rail PC | TBD | TBD |
+
+**Target Hardware**
+
+| Tag | Device | Type | MAC Address | Serial Number |
+|-----|--------|------|-------------|---------------|
+| [DEV-1](docs/devices/dev-1.md) | Arduino OPTA | Industrial Programmable Logic Controller | TBD | TBD |
+| [MET-1](docs/devices/met-1.md) | eGauge 4015 | Revenue-Grade Power Meter | TBD | TBD |
+| [RTAC-1](docs/devices/rtac-1.md) | SEL RTAC 3505 | Real-Time Automation Controller | TBD | TBD |
+
 <!-- NETJSON:REGISTRY:END -->
 
 ## Repository Structure

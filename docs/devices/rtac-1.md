@@ -7,7 +7,7 @@
 | **Manufacturer** | Schweitzer Engineering Laboratories |
 | **Model** | RTAC 3505 |
 | **Type** | Real-Time Automation Controller |
-| **Segment** | Target Hardware |
+| **Subsystem** | Target Hardware |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | TBD |

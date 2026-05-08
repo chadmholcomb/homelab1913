@@ -7,9 +7,9 @@
 | **Manufacturer** | Weidian |
 | **Model** | TBD |
 | **Type** | Industrial Fanless Mini PC |
-| **Segment** | Development Environment |
+| **Subsystem** | Development Subsystem |
 | **Hostname** | chad-lab1913 |
-| **IP Address** | 172.22.1.40 |
+| **IP Address** | 172.22.1.40, 10.0.0.103 |
 | **MAC Address** | 8c:03:60:4c:d5:fa |
 | **Serial Number** | TBD |
 | **Management** | SSH |

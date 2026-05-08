@@ -7,7 +7,7 @@
 | **Manufacturer** | Ubiquiti |
 | **Model** | USW-Pro-8-PoE |
 | **Type** | Managed Layer 2/3 PoE Switch |
-| **Segment** | Energy Management Assembly |
+| **Subsystem** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | TBD |

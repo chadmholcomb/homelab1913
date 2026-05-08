@@ -7,7 +7,7 @@
 | **Manufacturer** | Arduino |
 | **Model** | OPTA |
 | **Type** | Industrial Programmable Logic Controller |
-| **Segment** | Target Hardware |
+| **Subsystem** | Target Hardware |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | TBD |

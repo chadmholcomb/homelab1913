@@ -7,7 +7,7 @@
 | **Manufacturer** | Cradlepoint |
 | **Model** | IBR600 |
 | **Type** | LTE Cellular Router |
-| **Segment** | Development Environment |
+| **Subsystem** | Development Subsystem |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | 00:30:44:70:3F:C5 |

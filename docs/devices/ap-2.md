@@ -7,7 +7,7 @@
 | **Manufacturer** | TBD |
 | **Model** | TBD |
 | **Type** | Wireless Access Point |
-| **Segment** | Energy Management Assembly |
+| **Subsystem** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | TBD |

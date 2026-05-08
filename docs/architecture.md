@@ -1,10 +1,10 @@
 # Lab Architecture
 
-## Network Segments
+## Network Subsystems
 
-The lab is divided into three logical segments connected through a pair of managed switches.
+The lab is divided into three logical subsystems connected through a pair of managed switches.
 
-### Development Environment
+### Development Subsystem
 
 | Tag | Device | IP | Role |
 |-----|--------|----|------|
@@ -12,7 +12,7 @@ The lab is divided into three logical segments connected through a pair of manag
 | [NS-1](devices/ns-1.md) | Ubiquiti USW-Lite-8-PoE | 172.22.1.3 | Layer 2 managed switch |
 | [PC-1](devices/pc-1.md) | Fanless PC | 172.22.1.40 | Linux tooling and log aggregation host |
 
-MOD-1 (IBR600) provides LTE connectivity managed via NetCloud Manager, enabling remote SSH/VPN access without a fixed IP. NS-1 (USW-Lite-8-PoE) connects development devices and provides a cross-connect uplink to NS-2 on the EMA assembly.
+MOD-1 (IBR600) provides LTE connectivity managed via NetCloud Manager, enabling remote SSH/VPN access without a fixed IP. NS-1 (USW-Lite-8-PoE) connects development devices and provides a cross-connect uplink to NS-2 on the EMA subsystem.
 
 ---
 
@@ -85,6 +85,22 @@ The EMA assembly is a self-contained unit on the gold-plate panel simulating a f
 |-----|---------|----------|--------|
 | Mean Well NDR-120-45 | 48V DC | Gold plate (EMA) | TBD |
 | Mean Well NDR-120-24 | 24V DC | Bottom DIN rail | TBD |
+
+---
+
+## Connection Types
+
+Standard line styles used in topology diagrams throughout this repo.
+
+| Mermaid Style | Medium | Port Labels | Notes |
+|---------------|--------|-------------|-------|
+| `A --> B` solid arrow | Ethernet | Yes — `SRC:port -- DST:port` | Physical copper cable |
+| `A ==> B` thick arrow | Cellular / LTE / 5G | No | Wireless WAN — no physical cable or port |
+| `A -.-> B` dotted arrow | WiFi | No | Wireless LAN |
+| `A --o B` circle-end | RS-485 / Serial | Yes | Physical serial cable |
+| `A -.-> B` dotted arrow | Planned / inactive | Yes | Link defined but not yet physically connected |
+
+> WiFi and Serial styles are reserved for future use in the EMA and Target Hardware subsystems.
 
 ---
 

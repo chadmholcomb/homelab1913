@@ -7,7 +7,7 @@
 | **Manufacturer** | Phoenix Contact |
 | **Model** | TBD |
 | **Type** | Industrial DIN-Rail PC |
-| **Segment** | Energy Management Assembly |
+| **Subsystem** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | TBD |
@@ -32,7 +32,7 @@ Industrial PC mounted on the DIN rail within the Energy Management Assembly. Run
 <!-- NETJSON:INTERFACES:START -->
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
-| eth0 | ethernet | lan | TBD | NS-2 P3 |
+| X4LAN | ethernet | lan | TBD | NS-2 P1 |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Physical Connections

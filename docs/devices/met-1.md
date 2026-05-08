@@ -7,7 +7,7 @@
 | **Manufacturer** | eGauge Systems |
 | **Model** | EG4015 |
 | **Type** | Revenue-Grade Power Meter |
-| **Segment** | Target Hardware |
+| **Subsystem** | Target Hardware |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | TBD |

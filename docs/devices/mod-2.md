@@ -7,7 +7,7 @@
 | **Manufacturer** | Cradlepoint |
 | **Model** | S700 |
 | **Type** | 5G/LTE Branch Router |
-| **Segment** | Energy Management Assembly |
+| **Subsystem** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | TBD |
