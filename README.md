@@ -4,7 +4,7 @@ Documentation and observability repository for an industrial automation and ener
 
 ## Lab Diagram
 
-> Click any device node to open its documentation. Port labels show switch port assignments.
+> Port labels show switch port assignments. Use the Device Registry table below to navigate to device docs.
 
 ```mermaid
 graph LR
@@ -40,16 +40,7 @@ graph LR
     NS2 -->|"ETH+PoE - NS-2:P6 -- AP-2:eth0"| AP2
     NS2 -.->|"ETH - NS-2:P7 -- DEV-1:ETH0 planned"| DEV1
 
-    click MOD1 "docs/devices/mod-1.md"
-    click MOD2 "docs/devices/mod-2.md"
-    click NS1 "docs/devices/ns-1.md"
-    click NS2 "docs/devices/ns-2.md"
-    click PC1 "docs/devices/pc-1.md"
-    click PC2 "docs/devices/pc-2.md"
-    click AP2 "docs/devices/ap-2.md"
-    click RTAC1 "docs/devices/rtac-1.md"
-    click MET1 "docs/devices/met-1.md"
-    click DEV1 "docs/devices/dev-1.md"
+
 ```
 
 ## Device Registry
