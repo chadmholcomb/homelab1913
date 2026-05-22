@@ -92,6 +92,161 @@ All topology diagrams in this repo use these Mermaid line styles — maintain th
 
 The observability stack (Prometheus, Grafana, ELK/Graylog, Nagios) is **in scope** — actively help plan and implement it. Strategy documents are in `observability/logging.md` and `observability/monitoring.md`. `scripts/collect-logs.sh` is a stub for log aggregation and is not yet integrated with real devices.
 
+## Worked Examples
+
+### Example A — Adding a new device (power meter on NS-2 via Modbus TCP)
+
+**Step 1: Create the device markdown file** `docs/devices/met-2.md`
+
+The file must include both NETJSON marker blocks (the sync script will fill them in) plus the manually-written narrative sections. Use this as a template:
+
+```markdown
+# MET-2 — <Model Name>
+
+<!-- NETJSON:START -->
+<!-- NETJSON:END -->
+
+## Role
+
+<Describe what this device does in the lab>
+
+## Key Specs
+
+- TBD
+
+## Interfaces
+
+<!-- NETJSON:INTERFACES:START -->
+<!-- NETJSON:INTERFACES:END -->
+
+## Physical Connections
+
+- **ETH0:** → NS-2 Port P3
+
+## Protocol Map
+
+| Protocol | Role | Notes |
+|----------|------|-------|
+| Modbus TCP | Server | Port 502 — register map TBD |
+
+## Management Access
+
+TBD
+
+## Notes
+
+TBD
+```
+
+**Step 2: Add the node to `docs/network.json`** (inside the `"nodes"` array):
+
+```json
+{
+  "id": "MET-2",
+  "label": "<Manufacturer Model>",
+  "local_addresses": [],
+  "properties": {
+    "tag": "MET-2",
+    "manufacturer": "<Manufacturer>",
+    "model": "<Model>",
+    "type": "Power Meter",
+    "subsystem": "target",
+    "hostname": null,
+    "mac_address": null,
+    "serial_number": null,
+    "management_platform": "Web UI",
+    "management_url": null,
+    "firmware_version": null,
+    "doc": "docs/devices/met-2.md",
+    "interfaces": [
+      {
+        "name": "ETH0",
+        "type": "ethernet",
+        "role": "lan",
+        "addresses": [],
+        "notes": "NS-2 P3"
+      }
+    ],
+    "protocols": ["Modbus TCP", "HTTP REST"],
+    "notes": ""
+  }
+}
+```
+
+**Step 3: Add the link to `docs/network.json`** (inside the `"links"` array):
+
+```json
+{
+  "source": "NS-2",
+  "target": "MET-2",
+  "properties": {
+    "type": "ethernet",
+    "source_port": "P3",
+    "target_interface": "ETH0",
+    "media": "copper",
+    "speed": "1Gbps",
+    "notes": ""
+  }
+}
+```
+
+**Step 4: Update NS-2's P3 interface notes** in the `NS-2` node (already exists in the interfaces array — change `"notes": "TBD"` to `"notes": "MET-2 (ETH0)"`).
+
+**Step 5: Run the sync script** (ask the user first):
+
+```bash
+python3 scripts/sync-device-docs.py
+```
+
+**Step 6: Update the Mermaid diagram in `README.md` manually.** Add the node inside the `TGT` subgraph and a new edge from NS2:
+
+```
+MET2["MET-2\nPower Meter"]          ← add inside subgraph TGT
+NS2 -->|"ETH - NS-2:P3 -- MET-2:ETH0"| MET2    ← add as a new edge
+```
+
+**Step 7: Validate and commit:**
+
+```bash
+python3 scripts/sync-device-docs.py --validate
+git add docs/network.json docs/devices/met-2.md docs/devices/ns-2.md README.md
+git commit
+```
+
+---
+
+### Example B — Updating an attribute on an existing device
+
+**Scenario:** MET-1 has been assigned IP `192.168.10.20` and needs to be recorded.
+
+Edit `docs/network.json` — in the `MET-1` node, add the IP to `local_addresses` and the relevant interface:
+
+```json
+"local_addresses": ["192.168.10.20"],
+...
+"interfaces": [
+  {
+    "name": "ETH0",
+    "type": "ethernet",
+    "role": "lan",
+    "addresses": ["192.168.10.20/24"],
+    "notes": "NS-2 P5"
+  }
+]
+```
+
+Then sync and validate:
+
+```bash
+python3 scripts/sync-device-docs.py
+python3 scripts/sync-device-docs.py --validate
+git add docs/network.json docs/devices/met-1.md && git commit
+```
+
+The sync script will update the IP Address row in MET-1's info table and the address column in its interfaces table automatically. No edits to `met-1.md` are needed.
+
+---
+
 ## Design Decisions
 
 These were made deliberately — understand them before suggesting changes:
