@@ -40,7 +40,7 @@ General-purpose Linux environment for tooling development and log aggregation. S
 <!-- NETJSON:INTERFACES:START -->
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
-| enp1s0 | ethernet | lan | 172.22.1.40/24 | NS-1 P2 — primary lab network |
+| enp1s0 | ethernet | lan | 172.22.1.40/24 | NS-1 P6 — primary lab network |
 | enp2s0 | ethernet | lan | TBD | spare, unplugged |
 | wlp3s0 | wifi | mgmt | 10.0.0.103/24 | home network WiFi — DHCP, backup access |
 <!-- NETJSON:INTERFACES:END -->

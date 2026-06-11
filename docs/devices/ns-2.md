@@ -40,7 +40,7 @@ Core switch for the Energy Management Assembly. Distributes PoE power and networ
 | P5 | ethernet | access | TBD | MET-1 (ETH0) |
 | P6 | ethernet | access | TBD | AP-2 |
 | P7 | ethernet | access | TBD | DEV-1 (planned) |
-| P8 | ethernet | uplink | TBD | MOD-2 LAN |
+| P8 | ethernet | access | TBD | FMC-2 (ETH) — fiber cross-connect from DEV subsystem |
 | SFP1 | sfp+ | reserved | TBD | TBD |
 | SFP2 | sfp+ | reserved | TBD | TBD |
 <!-- NETJSON:INTERFACES:END -->

@@ -34,7 +34,7 @@ Provides independent LTE/5G WAN connectivity for the Energy Management Assembly.
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
 | lte0 | lte | wan | TBD | Primary LTE/5G uplink for EMA assembly |
-| eth0 | ethernet | lan | TBD | LAN to NS-2 P2 |
+| eth0 | ethernet | lan | TBD | LAN to NS-2 — port TBD |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Physical Connections

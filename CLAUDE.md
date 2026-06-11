@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Documentation and automation repository for an industrial automation and energy management development lab. The lab has three physical subsystems: **Development** (MOD-1, NS-1, PC-1), **Energy Management Assembly** (MOD-2, NS-2, PC-2, AP-2), and **Target Hardware** (RTAC-1, MET-1, DEV-1).
+Documentation and automation repository for an industrial automation and energy management development lab. The lab has three physical subsystems: **Development** (MOD-1, NS-1, PC-1, FMC-1, FMC-2), **Energy Management Assembly** (MOD-2, NS-2, PC-2, AP-2), and **Target Hardware** (RTAC-1, MET-1, DEV-1). FMC-1 and FMC-2 are fiber media converters physically located in the DEV assembly; FMC-2's copper port cross-connects into the EMA subsystem via NS-2.
 
 ## Key Commands
 
@@ -61,7 +61,7 @@ To change device info, edit `network.json` and sync. To change narrative content
 
 ## Device Naming Convention
 
-Tags follow the pattern `{TYPE}-{N}` where type is 2–6 uppercase letters: `MOD` (modem/router), `NS` (network switch), `PC` (computer), `AP` (access point), `RTAC` (RTAC controller), `MET` (meter), `DEV` (development device). The pattern `[A-Z]{2,6}-\d+` is used to detect tag references; known non-tags like `RS-485`, `HDMI-1` are in the `KNOWN_NON_TAGS` exclusion list in the sync script.
+Tags follow the pattern `{TYPE}-{N}` where type is 2–6 uppercase letters: `MOD` (modem/router), `NS` (network switch), `PC` (computer), `AP` (access point), `RTAC` (RTAC controller), `MET` (meter), `DEV` (development device), `FMC` (fiber media converter). The pattern `[A-Z]{2,6}-\d+` is used to detect tag references; known non-tags like `RS-485`, `HDMI-1` are in the `KNOWN_NON_TAGS` exclusion list in the sync script.
 
 ## Lab Diagram
 
@@ -70,7 +70,7 @@ The `README.md` Lab Diagram is a **hand-authored Mermaid `graph LR`** block — 
 Two authoring constraints to know:
 
 - **Mermaid node IDs cannot contain hyphens.** Device tags like `MOD-1` become `MOD1`, `NS-2` becomes `NS2`, etc. as Mermaid node identifiers. The display label still uses the full tag: `MOD1["MOD-1\nModem / Router"]`.
-- **Port labels go on edge labels**, not node labels. Format: `-->|"ETH - SRC:port -- DST:port"|` for Ethernet; omit the label entirely for cellular/WiFi.
+- **Port labels go on edge labels**, not node labels. Format: `-->|"ETH - SRC:port -- DST:port"|` for Ethernet; `==>|"FIBER - SRC:SFP -- DST:SFP"|` for fiber; omit the label entirely for cellular/WiFi.
 
 The three `subgraph` blocks map directly to the three subsystems (DEV, EMA, TGT). When adding a device, add it to the correct subgraph and wire its edges following the connection type standard below.
 
@@ -83,6 +83,7 @@ All topology diagrams in this repo use these Mermaid line styles — maintain th
 | Style | Medium | Port Labels |
 |-------|--------|-------------|
 | `A --> B` | Ethernet (physical copper) | Yes — `SRC:port -- DST:port` |
+| `A ==>|"FIBER - ..."| B` | Fiber optic (SMF/MMF) | Yes — `SFP:port -- SFP:port` |
 | `A ==> B` | Cellular / LTE / 5G | No |
 | `A -.-> B` (no label) | WiFi | No |
 | `A --o B` | RS-485 / Serial | Yes |

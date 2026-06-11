@@ -14,6 +14,8 @@ graph LR
         MOD1["MOD-1\nModem / Router"]
         NS1["NS-1\nSwitch"]
         PC1["PC-1\nLinux PC"]
+        FMC1["FMC-1\nMedia Converter"]
+        FMC2["FMC-2\nMedia Converter"]
     end
 
     subgraph EMA["Energy Management Assembly"]
@@ -32,8 +34,11 @@ graph LR
     WAN ==> MOD1
     WAN ==> MOD2
     MOD1 -->|"ETH - MOD-1:LAN -- NS-1:P1"| NS1
-    NS1 -->|"ETH - NS-1:P2 -- PC-1:LAN1"| PC1
-    MOD2 -->|"ETH - MOD-2:LAN -- NS-2:P8"| NS2
+    NS1 -->|"ETH - NS-1:P6 -- PC-1:enp1s0"| PC1
+    NS1 -->|"ETH - NS-1:P8 -- FMC-1:ETH"| FMC1
+    FMC1 ==>|"FIBER - FMC-1:SFP -- FMC-2:SFP"| FMC2
+    FMC2 -->|"ETH - FMC-2:ETH -- NS-2:P8"| NS2
+    MOD2 -->|"ETH - MOD-2:LAN -- NS-2:TBD"| NS2
     NS2 -->|"ETH - NS-2:P1 -- PC-2:X4LAN"| PC2
     NS2 -->|"ETH - NS-2:P4 -- RTAC-1:ETH1"| RTAC1
     NS2 -->|"ETH - NS-2:P5 -- MET-1:ETH0"| MET1
@@ -48,6 +53,7 @@ graph LR
 | Line Style | Medium | Port Labels | Notes |
 |------------|--------|-------------|-------|
 | `A --> B` solid arrow | Ethernet | Yes — `SRC:port -- DST:port` | Physical copper cable |
+| `A ==>|"FIBER - ..."| B` thick arrow with label | Fiber optic (SMF/MMF) | Yes — `SFP:port -- SFP:port` | OS2/OM single-mode or multimode fiber |
 | `A ==> B` thick arrow | Cellular / LTE / 5G | No | Wireless WAN — no physical cable |
 | `A -.-> B` dotted arrow | WiFi | No | Wireless LAN *(reserved — not yet used)* |
 | `A --o B` circle-end | RS-485 / Serial | Yes | Physical serial cable *(reserved — not yet used)* |
@@ -63,6 +69,8 @@ See [docs/architecture.md](docs/architecture.md) for the full connection type st
 
 | Tag | Device | Type | MAC Address | Serial Number |
 |-----|--------|------|-------------|---------------|
+| [FMC-1](docs/devices/fmc-1.md) | E-link LNK-IMC1200GP-SFP | Fiber Media Converter | TBD | TBD |
+| [FMC-2](docs/devices/fmc-2.md) | E-link LNK-IMC1200GP-SFP | Fiber Media Converter | TBD | TBD |
 | [MOD-1](docs/devices/mod-1.md) | Cradlepoint IBR600 | LTE Cellular Router | 00:30:44:70:3F:C5 | IMEI: 865 4930 4342 5942 |
 | [NS-1](docs/devices/ns-1.md) | Ubiquiti USW-Lite-8-PoE | Managed Layer 2 PoE Switch | 0C:EA:14:7F:BC:92 | TBD |
 | [PC-1](docs/devices/pc-1.md) | Fanless PC | Industrial Fanless Mini PC | 8c:03:60:4c:d5:fa | TBD |

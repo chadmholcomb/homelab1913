@@ -9,7 +9,7 @@
 | **Type** | LTE Cellular Router |
 | **Subsystem** | Development Subsystem |
 | **Hostname** | TBD |
-| **IP Address** | TBD |
+| **IP Address** | 172.22.1.1 |
 | **MAC Address** | 00:30:44:70:3F:C5 |
 | **Serial Number** | IMEI: 865 4930 4342 5942 |
 | **Management** | NetCloud Manager |
@@ -34,7 +34,7 @@ Provides LTE cellular WAN connectivity for the development environment. Primary 
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
 | lte0 | lte | wan | TBD | Primary LTE uplink — remote admin access |
-| eth0 | ethernet | lan | TBD | LAN to NS-1 P1 |
+| eth0 | ethernet | lan | 172.22.1.1/24 | LAN to NS-1 P1 — gateway for 172.22.1.0/24 |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Physical Connections

@@ -1,602 +1,742 @@
 {
-  "type": "NetworkGraph",
-  "label": "Homelab 1913 — Industrial Automation & Energy Management Lab",
-  "version": "1.0",
-  "protocol": "static",
-  "nodes": [
-    {
-      "id": "MOD-1",
-      "label": "Cradlepoint IBR600",
-      "local_addresses": [],
-      "properties": {
-        "tag": "MOD-1",
-        "manufacturer": "Cradlepoint",
-        "model": "IBR600",
-        "type": "LTE Cellular Router",
-        "subsystem": "development",
-        "hostname": null,
-        "mac_address": "00:30:44:70:3F:C5",
-        "serial_number": "IMEI: 865 4930 4342 5942",
-        "management_platform": "NetCloud Manager",
-        "management_url": null,
-        "firmware_version": null,
-        "doc": "docs/devices/mod-1.md",
-        "interfaces": [
-          {
-            "name": "lte0",
-            "type": "lte",
-            "role": "wan",
-            "addresses": [],
-            "notes": "Primary LTE uplink — remote admin access"
-          },
-          {
-            "name": "eth0",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": [],
-            "notes": "LAN to NS-1 P1"
-          }
-        ],
-        "protocols": [],
-        "notes": ""
-      }
-    },
-    {
-      "id": "MOD-2",
-      "label": "Cradlepoint S700",
-      "local_addresses": [],
-      "properties": {
-        "tag": "MOD-2",
-        "manufacturer": "Cradlepoint",
-        "model": "S700",
-        "type": "5G/LTE Branch Router",
-        "subsystem": "ema",
-        "hostname": null,
-        "mac_address": null,
-        "serial_number": null,
-        "management_platform": "NetCloud Manager",
-        "management_url": null,
-        "firmware_version": null,
-        "doc": "docs/devices/mod-2.md",
-        "interfaces": [
-          {
-            "name": "lte0",
-            "type": "lte",
-            "role": "wan",
-            "addresses": [],
-            "notes": "Primary LTE/5G uplink for EMA assembly"
-          },
-          {
-            "name": "eth0",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": [],
-            "notes": "LAN to NS-2 P2"
-          }
-        ],
-        "protocols": [],
-        "notes": ""
-      }
-    },
-    {
-      "id": "NS-1",
-      "label": "Ubiquiti USW-Lite-8-PoE",
-      "local_addresses": ["172.22.1.3"],
-      "properties": {
-        "tag": "NS-1",
-        "manufacturer": "Ubiquiti",
-        "model": "USW-Lite-8-PoE",
-        "type": "Managed Layer 2 PoE Switch",
-        "subsystem": "development",
-        "hostname": null,
-        "mac_address": "0C:EA:14:7F:BC:92",
-        "serial_number": null,
-        "management_platform": "UniFi Network Controller",
-        "management_url": "https://172.22.1.40:8443",
-        "firmware_version": "6.4.19",
-        "doc": "docs/devices/ns-1.md",
-        "interfaces": [
-          {
-            "name": "P1",
-            "type": "ethernet",
-            "role": "uplink",
-            "addresses": [],
-            "notes": "MOD-1 LAN"
-          },
-          {
-            "name": "P2",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "PC-1 (enp1s0) — 172.22.1.40"
-          },
-          {
-            "name": "P3",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "P4",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "P5",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "P6",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "P7",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "P8",
-            "type": "ethernet",
-            "role": "trunk",
-            "addresses": [],
-            "notes": "Cross-connect to NS-2 P1"
-          }
-        ],
-        "protocols": [],
-        "notes": ""
-      }
-    },
-    {
-      "id": "NS-2",
-      "label": "Ubiquiti USW-Pro-8-PoE 120W",
-      "local_addresses": [],
-      "properties": {
-        "tag": "NS-2",
-        "manufacturer": "Ubiquiti",
-        "model": "USW-Pro-8-PoE",
-        "type": "Managed Layer 2/3 PoE Switch",
-        "subsystem": "ema",
-        "hostname": null,
-        "mac_address": null,
-        "serial_number": null,
-        "management_platform": "UniFi Network Controller",
-        "management_url": null,
-        "firmware_version": null,
-        "doc": "docs/devices/ns-2.md",
-        "interfaces": [
-          {
-            "name": "P1",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "PC-2 (X4LAN)"
-          },
-          {
-            "name": "P2",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "P3",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "P4",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "RTAC-1 (ETH1)"
-          },
-          {
-            "name": "P5",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "MET-1 (ETH0)"
-          },
-          {
-            "name": "P6",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "AP-2"
-          },
-          {
-            "name": "P7",
-            "type": "ethernet",
-            "role": "access",
-            "addresses": [],
-            "notes": "DEV-1 (planned)"
-          },
-          {
-            "name": "P8",
-            "type": "ethernet",
-            "role": "uplink",
-            "addresses": [],
-            "notes": "MOD-2 LAN"
-          },
-          {
-            "name": "SFP1",
-            "type": "sfp+",
-            "role": "reserved",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "SFP2",
-            "type": "sfp+",
-            "role": "reserved",
-            "addresses": [],
-            "notes": "TBD"
-          }
-        ],
-        "protocols": [],
-        "notes": ""
-      }
-    },
-    {
-      "id": "PC-1",
-      "label": "Fanless PC",
-      "local_addresses": ["172.22.1.40", "10.0.0.103"],
-      "properties": {
-        "tag": "PC-1",
-        "manufacturer": "Weidian",
-        "model": null,
-        "type": "Industrial Fanless Mini PC",
-        "subsystem": "development",
-        "hostname": "chad-lab1913",
-        "mac_address": "8c:03:60:4c:d5:fa",
-        "serial_number": null,
-        "management_platform": "SSH",
-        "management_url": "ssh chad@172.22.1.40",
-        "firmware_version": null,
-        "doc": "docs/devices/pc-1.md",
-        "interfaces": [
-          {
-            "name": "enp1s0",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": ["172.22.1.40/24"],
-            "notes": "NS-1 P2 — primary lab network"
-          },
-          {
-            "name": "enp2s0",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": [],
-            "notes": "spare, unplugged"
-          },
-          {
-            "name": "wlp3s0",
-            "type": "wifi",
-            "role": "mgmt",
-            "addresses": ["10.0.0.103/24"],
-            "notes": "home network WiFi — DHCP, backup access"
-          }
-        ],
-        "protocols": [],
-        "notes": "General-purpose Linux tooling and log aggregation host. Ubuntu 24.04.2 LTS. i7-10810U, 32GB RAM, 915GB NVMe."
-      }
-    },
-    {
-      "id": "PC-2",
-      "label": "Phoenix Contact PC",
-      "local_addresses": [],
-      "properties": {
-        "tag": "PC-2",
-        "manufacturer": "Phoenix Contact",
-        "model": null,
-        "type": "Industrial DIN-Rail PC",
-        "subsystem": "ema",
-        "hostname": null,
-        "mac_address": null,
-        "serial_number": null,
-        "management_platform": null,
-        "management_url": null,
-        "firmware_version": null,
-        "doc": "docs/devices/pc-2.md",
-        "interfaces": [
-          {
-            "name": "X4LAN",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": [],
-            "notes": "NS-2 P1"
-          }
-        ],
-        "protocols": [],
-        "notes": "DIN-rail mounted industrial PC on the EMA assembly gold plate"
-      }
-    },
-    {
-      "id": "AP-2",
-      "label": "WiFi Access Point",
-      "local_addresses": [],
-      "properties": {
-        "tag": "AP-2",
-        "manufacturer": "TBD",
-        "model": "TBD",
-        "type": "Wireless Access Point",
-        "subsystem": "ema",
-        "hostname": null,
-        "mac_address": null,
-        "serial_number": null,
-        "management_platform": "TBD",
-        "management_url": null,
-        "firmware_version": null,
-        "doc": "docs/devices/ap-2.md",
-        "interfaces": [
-          {
-            "name": "eth0",
-            "type": "ethernet",
-            "role": "uplink",
-            "addresses": [],
-            "notes": "PoE uplink to NS-2 P6"
-          },
-          {
-            "name": "wlan0",
-            "type": "wifi",
-            "role": "ap",
-            "addresses": [],
-            "notes": "SSID TBD"
-          }
-        ],
-        "protocols": [],
-        "notes": "Model to be confirmed"
-      }
-    },
-    {
-      "id": "RTAC-1",
-      "label": "SEL RTAC 3505",
-      "local_addresses": [],
-      "properties": {
-        "tag": "RTAC-1",
-        "manufacturer": "Schweitzer Engineering Laboratories",
-        "model": "RTAC 3505",
-        "type": "Real-Time Automation Controller",
-        "subsystem": "target",
-        "hostname": null,
-        "mac_address": null,
-        "serial_number": null,
-        "management_platform": "AcSELerator RTAC",
-        "management_url": null,
-        "firmware_version": null,
-        "doc": "docs/devices/rtac-1.md",
-        "interfaces": [
-          {
-            "name": "ETH1",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": [],
-            "notes": "Primary — NS-2 P4"
-          },
-          {
-            "name": "ETH2",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "COM1",
-            "type": "rs232",
-            "role": "serial",
-            "addresses": [],
-            "notes": "TBD"
-          },
-          {
-            "name": "COM2",
-            "type": "rs485",
-            "role": "serial",
-            "addresses": [],
-            "notes": "TBD"
-          }
-        ],
-        "protocols": ["DNP3", "Modbus RTU", "Modbus TCP", "IEC 61850", "GOOSE", "SEL protocol"],
-        "notes": ""
-      }
-    },
-    {
-      "id": "MET-1",
-      "label": "eGauge 4015",
-      "local_addresses": [],
-      "properties": {
-        "tag": "MET-1",
-        "manufacturer": "eGauge Systems",
-        "model": "EG4015",
-        "type": "Revenue-Grade Power Meter",
-        "subsystem": "target",
-        "hostname": null,
-        "mac_address": null,
-        "serial_number": null,
-        "management_platform": "Web UI / REST API",
-        "management_url": null,
-        "firmware_version": null,
-        "doc": "docs/devices/met-1.md",
-        "interfaces": [
-          {
-            "name": "ETH0",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": [],
-            "notes": "NS-2 P5"
-          }
-        ],
-        "protocols": ["Modbus TCP", "HTTP REST", "XML push"],
-        "notes": ""
-      }
-    },
-    {
-      "id": "DEV-1",
-      "label": "Arduino OPTA",
-      "local_addresses": [],
-      "properties": {
-        "tag": "DEV-1",
-        "manufacturer": "Arduino",
-        "model": "OPTA",
-        "type": "Industrial Programmable Logic Controller",
-        "subsystem": "target",
-        "hostname": null,
-        "mac_address": null,
-        "serial_number": null,
-        "management_platform": "Arduino IDE / Arduino Cloud",
-        "management_url": null,
-        "firmware_version": null,
-        "doc": "docs/devices/dev-1.md",
-        "interfaces": [
-          {
-            "name": "ETH0",
-            "type": "ethernet",
-            "role": "lan",
-            "addresses": [],
-            "notes": "NS-2 P7 (planned)"
-          },
-          {
-            "name": "RS485",
-            "type": "rs485",
-            "role": "serial",
-            "addresses": [],
-            "notes": "TBD — connection to PC-2 / RTAC-1 / MET-1 (planned)"
-          }
-        ],
-        "protocols": ["Modbus RTU", "Modbus TCP"],
-        "notes": "Test device for PC-2, RTAC-1, MET-1. Connections TBD."
-      }
-    }
-  ],
-  "links": [
-    {
-      "source": "WAN",
-      "target": "MOD-1",
-      "properties": {
-        "type": "lte",
-        "source_interface": "cellular",
-        "target_interface": "lte0",
-        "notes": "Development environment WAN"
-      }
-    },
-    {
-      "source": "WAN",
-      "target": "MOD-2",
-      "properties": {
-        "type": "lte",
-        "source_interface": "cellular",
-        "target_interface": "lte0",
-        "notes": "EMA assembly WAN"
-      }
-    },
-    {
-      "source": "MOD-1",
-      "target": "NS-1",
-      "properties": {
-        "type": "ethernet",
-        "source_interface": "LAN",
-        "target_port": "P1",
-        "media": "copper",
-        "speed": "1Gbps",
-        "notes": ""
-      }
-    },
-    {
-      "source": "NS-1",
-      "target": "PC-1",
-      "properties": {
-        "type": "ethernet",
-        "source_port": "P2",
-        "target_interface": "enp1s0",
-        "media": "copper",
-        "speed": "1Gbps",
-        "notes": ""
-      }
-    },
-    {
-      "source": "MOD-2",
-      "target": "NS-2",
-      "properties": {
-        "type": "ethernet",
-        "source_interface": "LAN",
-        "target_port": "P8",
-        "media": "copper",
-        "speed": "1Gbps",
-        "notes": ""
-      }
-    },
-    {
-      "source": "NS-2",
-      "target": "PC-2",
-      "properties": {
-        "type": "ethernet",
-        "source_port": "P1",
-        "target_interface": "X4LAN",
-        "media": "copper",
-        "speed": "1Gbps",
-        "notes": ""
-      }
-    },
-    {
-      "source": "NS-2",
-      "target": "RTAC-1",
-      "properties": {
-        "type": "ethernet",
-        "source_port": "P4",
-        "target_interface": "ETH1",
-        "media": "copper",
-        "speed": "100Mbps",
-        "notes": ""
-      }
-    },
-    {
-      "source": "NS-2",
-      "target": "MET-1",
-      "properties": {
-        "type": "ethernet",
-        "source_port": "P5",
-        "target_interface": "ETH0",
-        "media": "copper",
-        "speed": "1Gbps",
-        "notes": ""
-      }
-    },
-    {
-      "source": "NS-2",
-      "target": "AP-2",
-      "properties": {
-        "type": "ethernet",
-        "source_port": "P6",
-        "target_interface": "eth0",
-        "media": "copper",
-        "speed": "1Gbps",
-        "poe": true,
-        "notes": "PoE powered"
-      }
-    },
-    {
-      "source": "NS-2",
-      "target": "DEV-1",
-      "properties": {
-        "type": "ethernet",
-        "source_port": "P7",
-        "target_interface": "ETH0",
-        "media": "copper",
-        "speed": "1Gbps",
-        "notes": "Planned — not yet connected"
-      }
-    }
-  ]
+    "type": "NetworkGraph",
+    "label": "Homelab 1913 — Industrial Automation & Energy Management Lab",
+    "version": "1.0",
+    "protocol": "static",
+    "nodes": [
+        {
+            "id": "MOD-1",
+            "label": "Cradlepoint IBR600",
+            "local_addresses": [
+                "172.22.1.1"
+            ],
+            "properties": {
+                "tag": "MOD-1",
+                "manufacturer": "Cradlepoint",
+                "model": "IBR600",
+                "type": "LTE Cellular Router",
+                "subsystem": "development",
+                "hostname": null,
+                "mac_address": "00:30:44:70:3F:C5",
+                "serial_number": "IMEI: 865 4930 4342 5942",
+                "management_platform": "NetCloud Manager",
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/mod-1.md",
+                "interfaces": [
+                    {
+                        "name": "lte0",
+                        "type": "lte",
+                        "role": "wan",
+                        "addresses": [],
+                        "notes": "Primary LTE uplink — remote admin access"
+                    },
+                    {
+                        "name": "eth0",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [
+                            "172.22.1.1/24"
+                        ],
+                        "notes": "LAN to NS-1 P1 — gateway for 172.22.1.0/24"
+                    }
+                ],
+                "protocols": [],
+                "notes": "LAN MAC 2a:30:44:70:3f:c5 is the locally-administered bridge MAC for the eth0 LAN interface (last 3 bytes match hardware MAC)."
+            }
+        },
+        {
+            "id": "MOD-2",
+            "label": "Cradlepoint S700",
+            "local_addresses": [],
+            "properties": {
+                "tag": "MOD-2",
+                "manufacturer": "Cradlepoint",
+                "model": "S700",
+                "type": "5G/LTE Branch Router",
+                "subsystem": "ema",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": "NetCloud Manager",
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/mod-2.md",
+                "interfaces": [
+                    {
+                        "name": "lte0",
+                        "type": "lte",
+                        "role": "wan",
+                        "addresses": [],
+                        "notes": "Primary LTE/5G uplink for EMA assembly"
+                    },
+                    {
+                        "name": "eth0",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "LAN to NS-2 — port TBD"
+                    }
+                ],
+                "protocols": [],
+                "notes": ""
+            }
+        },
+        {
+            "id": "NS-1",
+            "label": "Ubiquiti USW-Lite-8-PoE",
+            "local_addresses": [
+                "172.22.1.3"
+            ],
+            "properties": {
+                "tag": "NS-1",
+                "manufacturer": "Ubiquiti",
+                "model": "USW-Lite-8-PoE",
+                "type": "Managed Layer 2 PoE Switch",
+                "subsystem": "development",
+                "hostname": null,
+                "mac_address": "0C:EA:14:7F:BC:92",
+                "serial_number": null,
+                "management_platform": "UniFi Network Controller",
+                "management_url": "https://172.22.1.40:8443",
+                "firmware_version": "6.4.19",
+                "doc": "docs/devices/ns-1.md",
+                "interfaces": [
+                    {
+                        "name": "P1",
+                        "type": "ethernet",
+                        "role": "uplink",
+                        "addresses": [],
+                        "notes": "MOD-1 LAN"
+                    },
+                    {
+                        "name": "P2",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "P3",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "P4",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "P5",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "P6",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "PC-1 (enp1s0) — 172.22.1.40"
+                    },
+                    {
+                        "name": "P7",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "P8",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "FMC-1 (ETH)"
+                    }
+                ],
+                "protocols": [],
+                "notes": ""
+            }
+        },
+        {
+            "id": "NS-2",
+            "label": "Ubiquiti USW-Pro-8-PoE 120W",
+            "local_addresses": [],
+            "properties": {
+                "tag": "NS-2",
+                "manufacturer": "Ubiquiti",
+                "model": "USW-Pro-8-PoE",
+                "type": "Managed Layer 2/3 PoE Switch",
+                "subsystem": "ema",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": "UniFi Network Controller",
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/ns-2.md",
+                "interfaces": [
+                    {
+                        "name": "P1",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "PC-2 (X4LAN)"
+                    },
+                    {
+                        "name": "P2",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "P3",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "P4",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "RTAC-1 (ETH1)"
+                    },
+                    {
+                        "name": "P5",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "MET-1 (ETH0)"
+                    },
+                    {
+                        "name": "P6",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "AP-2"
+                    },
+                    {
+                        "name": "P7",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "DEV-1 (planned)"
+                    },
+                    {
+                        "name": "P8",
+                        "type": "ethernet",
+                        "role": "access",
+                        "addresses": [],
+                        "notes": "FMC-2 (ETH) — fiber cross-connect from DEV subsystem"
+                    },
+                    {
+                        "name": "SFP1",
+                        "type": "sfp+",
+                        "role": "reserved",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "SFP2",
+                        "type": "sfp+",
+                        "role": "reserved",
+                        "addresses": [],
+                        "notes": "TBD"
+                    }
+                ],
+                "protocols": [],
+                "notes": ""
+            }
+        },
+        {
+            "id": "PC-1",
+            "label": "Fanless PC",
+            "local_addresses": [
+                "172.22.1.40",
+                "10.0.0.103"
+            ],
+            "properties": {
+                "tag": "PC-1",
+                "manufacturer": "Weidian",
+                "model": null,
+                "type": "Industrial Fanless Mini PC",
+                "subsystem": "development",
+                "hostname": "chad-lab1913",
+                "mac_address": "8c:03:60:4c:d5:fa",
+                "serial_number": null,
+                "management_platform": "SSH",
+                "management_url": "ssh chad@172.22.1.40",
+                "firmware_version": null,
+                "doc": "docs/devices/pc-1.md",
+                "interfaces": [
+                    {
+                        "name": "enp1s0",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [
+                            "172.22.1.40/24"
+                        ],
+                        "notes": "NS-1 P6 — primary lab network"
+                    },
+                    {
+                        "name": "enp2s0",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "spare, unplugged"
+                    },
+                    {
+                        "name": "wlp3s0",
+                        "type": "wifi",
+                        "role": "mgmt",
+                        "addresses": [
+                            "10.0.0.103/24"
+                        ],
+                        "notes": "home network WiFi — DHCP, backup access"
+                    }
+                ],
+                "protocols": [],
+                "notes": "General-purpose Linux tooling and log aggregation host. Ubuntu 24.04.2 LTS. i7-10810U, 32GB RAM, 915GB NVMe."
+            }
+        },
+        {
+            "id": "PC-2",
+            "label": "Phoenix Contact PC",
+            "local_addresses": [],
+            "properties": {
+                "tag": "PC-2",
+                "manufacturer": "Phoenix Contact",
+                "model": null,
+                "type": "Industrial DIN-Rail PC",
+                "subsystem": "ema",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": null,
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/pc-2.md",
+                "interfaces": [
+                    {
+                        "name": "X4LAN",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "NS-2 P1"
+                    }
+                ],
+                "protocols": [],
+                "notes": "DIN-rail mounted industrial PC on the EMA assembly gold plate"
+            }
+        },
+        {
+            "id": "AP-2",
+            "label": "WiFi Access Point",
+            "local_addresses": [],
+            "properties": {
+                "tag": "AP-2",
+                "manufacturer": "TBD",
+                "model": "TBD",
+                "type": "Wireless Access Point",
+                "subsystem": "ema",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": "TBD",
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/ap-2.md",
+                "interfaces": [
+                    {
+                        "name": "eth0",
+                        "type": "ethernet",
+                        "role": "uplink",
+                        "addresses": [],
+                        "notes": "PoE uplink to NS-2 P6"
+                    },
+                    {
+                        "name": "wlan0",
+                        "type": "wifi",
+                        "role": "ap",
+                        "addresses": [],
+                        "notes": "SSID TBD"
+                    }
+                ],
+                "protocols": [],
+                "notes": "Model to be confirmed"
+            }
+        },
+        {
+            "id": "FMC-1",
+            "label": "E-link LNK-IMC1200GP-SFP",
+            "local_addresses": [],
+            "properties": {
+                "tag": "FMC-1",
+                "manufacturer": "E-link",
+                "model": "LNK-IMC1200GP-SFP",
+                "type": "Fiber Media Converter",
+                "subsystem": "development",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": null,
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/fmc-1.md",
+                "interfaces": [
+                    {
+                        "name": "ETH",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "NS-1 P8 — copper uplink to DEV switch"
+                    },
+                    {
+                        "name": "SFP",
+                        "type": "sfp",
+                        "role": "fiber",
+                        "addresses": [],
+                        "notes": "FMC-2 SFP — OS2 LC duplex, 10Gtek 1000Base-SX"
+                    }
+                ],
+                "protocols": [],
+                "notes": "Unmanaged Layer 1 device — no IP stack. SFP transceiver: 10Gtek 1000Base-SX. DIN-rail mounted in DEV assembly."
+            }
+        },
+        {
+            "id": "FMC-2",
+            "label": "E-link LNK-IMC1200GP-SFP",
+            "local_addresses": [],
+            "properties": {
+                "tag": "FMC-2",
+                "manufacturer": "E-link",
+                "model": "LNK-IMC1200GP-SFP",
+                "type": "Fiber Media Converter",
+                "subsystem": "development",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": null,
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/fmc-2.md",
+                "interfaces": [
+                    {
+                        "name": "SFP",
+                        "type": "sfp",
+                        "role": "fiber",
+                        "addresses": [],
+                        "notes": "FMC-1 SFP — OS2 LC duplex, 10Gtek 1000Base-SX"
+                    },
+                    {
+                        "name": "ETH",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "NS-2 P8 — copper to EMA switch"
+                    }
+                ],
+                "protocols": [],
+                "notes": "Unmanaged Layer 1 device — no IP stack. SFP transceiver: 10Gtek 1000Base-SX. Physically co-located in DEV assembly DIN rail; copper port terminates at NS-2 (EMA)."
+            }
+        },
+        {
+            "id": "RTAC-1",
+            "label": "SEL RTAC 3505",
+            "local_addresses": [],
+            "properties": {
+                "tag": "RTAC-1",
+                "manufacturer": "Schweitzer Engineering Laboratories",
+                "model": "RTAC 3505",
+                "type": "Real-Time Automation Controller",
+                "subsystem": "target",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": "AcSELerator RTAC",
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/rtac-1.md",
+                "interfaces": [
+                    {
+                        "name": "ETH1",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "Primary — NS-2 P4"
+                    },
+                    {
+                        "name": "ETH2",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "COM1",
+                        "type": "rs232",
+                        "role": "serial",
+                        "addresses": [],
+                        "notes": "TBD"
+                    },
+                    {
+                        "name": "COM2",
+                        "type": "rs485",
+                        "role": "serial",
+                        "addresses": [],
+                        "notes": "TBD"
+                    }
+                ],
+                "protocols": [
+                    "DNP3",
+                    "Modbus RTU",
+                    "Modbus TCP",
+                    "IEC 61850",
+                    "GOOSE",
+                    "SEL protocol"
+                ],
+                "notes": ""
+            }
+        },
+        {
+            "id": "MET-1",
+            "label": "eGauge 4015",
+            "local_addresses": [],
+            "properties": {
+                "tag": "MET-1",
+                "manufacturer": "eGauge Systems",
+                "model": "EG4015",
+                "type": "Revenue-Grade Power Meter",
+                "subsystem": "target",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": "Web UI / REST API",
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/met-1.md",
+                "interfaces": [
+                    {
+                        "name": "ETH0",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "NS-2 P5"
+                    }
+                ],
+                "protocols": [
+                    "Modbus TCP",
+                    "HTTP REST",
+                    "XML push"
+                ],
+                "notes": ""
+            }
+        },
+        {
+            "id": "DEV-1",
+            "label": "Arduino OPTA",
+            "local_addresses": [],
+            "properties": {
+                "tag": "DEV-1",
+                "manufacturer": "Arduino",
+                "model": "OPTA",
+                "type": "Industrial Programmable Logic Controller",
+                "subsystem": "target",
+                "hostname": null,
+                "mac_address": null,
+                "serial_number": null,
+                "management_platform": "Arduino IDE / Arduino Cloud",
+                "management_url": null,
+                "firmware_version": null,
+                "doc": "docs/devices/dev-1.md",
+                "interfaces": [
+                    {
+                        "name": "ETH0",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "NS-2 P7 (planned)"
+                    },
+                    {
+                        "name": "RS485",
+                        "type": "rs485",
+                        "role": "serial",
+                        "addresses": [],
+                        "notes": "TBD — connection to PC-2 / RTAC-1 / MET-1 (planned)"
+                    }
+                ],
+                "protocols": [
+                    "Modbus RTU",
+                    "Modbus TCP"
+                ],
+                "notes": "Test device for PC-2, RTAC-1, MET-1. Connections TBD."
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": "WAN",
+            "target": "MOD-1",
+            "properties": {
+                "type": "lte",
+                "source_interface": "cellular",
+                "target_interface": "lte0",
+                "notes": "Development environment WAN"
+            }
+        },
+        {
+            "source": "WAN",
+            "target": "MOD-2",
+            "properties": {
+                "type": "lte",
+                "source_interface": "cellular",
+                "target_interface": "lte0",
+                "notes": "EMA assembly WAN"
+            }
+        },
+        {
+            "source": "MOD-1",
+            "target": "NS-1",
+            "properties": {
+                "type": "ethernet",
+                "source_interface": "LAN",
+                "target_port": "P1",
+                "media": "copper",
+                "speed": "1Gbps",
+                "notes": ""
+            }
+        },
+        {
+            "source": "NS-1",
+            "target": "PC-1",
+            "properties": {
+                "type": "ethernet",
+                "source_port": "P6",
+                "target_interface": "enp1s0",
+                "media": "copper",
+                "speed": "1Gbps",
+                "notes": ""
+            }
+        },
+        {
+            "source": "NS-1",
+            "target": "FMC-1",
+            "properties": {
+                "type": "ethernet",
+                "source_port": "P8",
+                "target_interface": "ETH",
+                "media": "copper",
+                "speed": "1Gbps",
+                "notes": ""
+            }
+        },
+        {
+            "source": "FMC-1",
+            "target": "FMC-2",
+            "properties": {
+                "type": "fiber",
+                "source_interface": "SFP",
+                "target_interface": "SFP",
+                "media": "single-mode",
+                "cable": "OS2 LC/UPC-LC/UPC duplex",
+                "speed": "1Gbps",
+                "optic": "1000Base-SX",
+                "transceiver": "10Gtek",
+                "notes": "OS2 LC duplex patch, 10Gtek 1000Base-SX SFPs"
+            }
+        },
+        {
+            "source": "FMC-2",
+            "target": "NS-2",
+            "properties": {
+                "type": "ethernet",
+                "source_interface": "ETH",
+                "target_port": "P8",
+                "media": "copper",
+                "speed": "1Gbps",
+                "notes": ""
+            }
+        },
+        {
+            "source": "MOD-2",
+            "target": "NS-2",
+            "properties": {
+                "type": "ethernet",
+                "source_interface": "LAN",
+                "target_port": "TBD",
+                "media": "copper",
+                "speed": "1Gbps",
+                "notes": "Port TBD — P8 now occupied by FMC-2"
+            }
+        },
+        {
+            "source": "NS-2",
+            "target": "PC-2",
+            "properties": {
+                "type": "ethernet",
+                "source_port": "P1",
+                "target_interface": "X4LAN",
+                "media": "copper",
+                "speed": "1Gbps",
+                "notes": ""
+            }
+        },
+        {
+            "source": "NS-2",
+            "target": "RTAC-1",
+            "properties": {
+                "type": "ethernet",
+                "source_port": "P4",
+                "target_interface": "ETH1",
+                "media": "copper",
+                "speed": "100Mbps",
+                "notes": ""
+            }
+        },
+        {
+            "source": "NS-2",
+            "target": "MET-1",
+            "properties": {
+                "type": "ethernet",
+                "source_port": "P5",
+                "target_interface": "ETH0",
+                "media": "copper",
+                "speed": "1Gbps",
+                "notes": ""
+            }
+        },
+        {
+            "source": "NS-2",
+            "target": "AP-2",
+            "properties": {
+                "type": "ethernet",
+                "source_port": "P6",
+                "target_interface": "eth0",
+                "media": "copper",
+                "speed": "1Gbps",
+                "poe": true,
+                "notes": "PoE powered"
+            }
+        },
+        {
+            "source": "NS-2",
+            "target": "DEV-1",
+            "properties": {
+                "type": "ethernet",
+                "source_port": "P7",
+                "target_interface": "ETH0",
+                "media": "copper",
+                "speed": "1Gbps",
+                "notes": "Planned — not yet connected"
+            }
+        }
+    ]
 }

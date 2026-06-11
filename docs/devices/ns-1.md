@@ -34,13 +34,13 @@ Core switch for the development environment. Connects all development-side devic
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
 | P1 | ethernet | uplink | TBD | MOD-1 LAN |
-| P2 | ethernet | access | TBD | PC-1 (enp1s0) — 172.22.1.40 |
+| P2 | ethernet | access | TBD | TBD |
 | P3 | ethernet | access | TBD | TBD |
 | P4 | ethernet | access | TBD | TBD |
 | P5 | ethernet | access | TBD | TBD |
-| P6 | ethernet | access | TBD | TBD |
+| P6 | ethernet | access | TBD | PC-1 (enp1s0) — 172.22.1.40 |
 | P7 | ethernet | access | TBD | TBD |
-| P8 | ethernet | trunk | TBD | Cross-connect to NS-2 P1 |
+| P8 | ethernet | access | TBD | FMC-1 (ETH) |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Management Access
