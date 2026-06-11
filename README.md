@@ -81,8 +81,8 @@ See [docs/architecture.md](docs/architecture.md) for the full connection type st
 |-----|--------|------|-------------|---------------|
 | [AP-2](docs/devices/ap-2.md) | WiFi Access Point | Wireless Access Point | TBD | TBD |
 | [MOD-2](docs/devices/mod-2.md) | Cradlepoint S700 | 5G/LTE Branch Router | 00:30:44:C3:EF:7A | TBD |
-| [NS-2](docs/devices/ns-2.md) | Ubiquiti USW-Pro-8-PoE 120W | Managed Layer 2/3 PoE Switch | TBD | TBD |
-| [PC-2](docs/devices/pc-2.md) | Phoenix Contact PC | Industrial DIN-Rail PC | TBD | TBD |
+| [NS-2](docs/devices/ns-2.md) | Ubiquiti USW-Pro-8-PoE 120W | Managed Layer 2/3 PoE Switch | 0C:EA:14:B4:5B:21 | TBD |
+| [PC-2](docs/devices/pc-2.md) | Phoenix Contact VL3 UPC 2440 | Industrial DIN-Rail PC | CC:CC:EA:71:CB:50 | E254425853 |
 
 **Target Hardware**
 

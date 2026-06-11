@@ -9,8 +9,8 @@
 | **Type** | Managed Layer 2/3 PoE Switch |
 | **Subsystem** | Energy Management Assembly |
 | **Hostname** | TBD |
-| **IP Address** | TBD |
-| **MAC Address** | TBD |
+| **IP Address** | 172.22.1.44 |
+| **MAC Address** | 0C:EA:14:B4:5B:21 |
 | **Serial Number** | TBD |
 | **Management** | UniFi Network Controller |
 | **Management URL** | TBD |

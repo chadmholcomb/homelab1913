@@ -79,7 +79,7 @@
                     }
                 ],
                 "protocols": [],
-                "notes": ""
+                "notes": "EMA LAN IP is 172.22.1.1/24 on the EMA L2 domain (same address as MOD-1 on a separate broadcast domain — Cradlepoint default). LAN bridge MAC 2e:30:44:c3:ef:7a is locally-administered (same derivation pattern as MOD-1)."
             }
         },
         {
@@ -166,7 +166,9 @@
         {
             "id": "NS-2",
             "label": "Ubiquiti USW-Pro-8-PoE 120W",
-            "local_addresses": [],
+            "local_addresses": [
+                "172.22.1.44"
+            ],
             "properties": {
                 "tag": "NS-2",
                 "manufacturer": "Ubiquiti",
@@ -174,7 +176,7 @@
                 "type": "Managed Layer 2/3 PoE Switch",
                 "subsystem": "ema",
                 "hostname": null,
-                "mac_address": null,
+                "mac_address": "0C:EA:14:B4:5B:21",
                 "serial_number": null,
                 "management_platform": "UniFi Network Controller",
                 "management_url": null,
@@ -309,17 +311,17 @@
         },
         {
             "id": "PC-2",
-            "label": "Phoenix Contact PC",
+            "label": "Phoenix Contact VL3 UPC 2440",
             "local_addresses": [],
             "properties": {
                 "tag": "PC-2",
                 "manufacturer": "Phoenix Contact",
-                "model": null,
+                "model": "VL3 UPC 2440",
                 "type": "Industrial DIN-Rail PC",
                 "subsystem": "ema",
                 "hostname": null,
-                "mac_address": null,
-                "serial_number": null,
+                "mac_address": "CC:CC:EA:71:CB:50",
+                "serial_number": "E254425853",
                 "management_platform": null,
                 "management_url": null,
                 "firmware_version": null,
@@ -330,11 +332,18 @@
                         "type": "ethernet",
                         "role": "lan",
                         "addresses": [],
-                        "notes": "NS-2 P1"
+                        "notes": "NS-2 P1 — primary LAN (MAC CC:CC:EA:71:CB:50)"
+                    },
+                    {
+                        "name": "X5LAN",
+                        "type": "ethernet",
+                        "role": "lan",
+                        "addresses": [],
+                        "notes": "Secondary LAN (MAC CC:CC:EA:71:CB:51) — TBD"
                     }
                 ],
                 "protocols": [],
-                "notes": "DIN-rail mounted industrial PC on the EMA assembly gold plate"
+                "notes": "Ord.No. 1697948. DIN-rail mounted industrial PC on the EMA assembly. Two MACs on label: CC:CC:EA:71:CB:50 (X4LAN), CC:CC:EA:71:CB:51 (X5LAN)."
             }
         },
         {

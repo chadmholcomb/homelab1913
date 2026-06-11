@@ -1,17 +1,17 @@
-# PC-2 — Phoenix Contact PC
+# PC-2 — Phoenix Contact VL3 UPC 2440
 
 <!-- NETJSON:START -->
 | Field | Value |
 |-------|-------|
 | **Tag** | PC-2 |
 | **Manufacturer** | Phoenix Contact |
-| **Model** | TBD |
+| **Model** | VL3 UPC 2440 |
 | **Type** | Industrial DIN-Rail PC |
 | **Subsystem** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
-| **MAC Address** | TBD |
-| **Serial Number** | TBD |
+| **MAC Address** | CC:CC:EA:71:CB:50 |
+| **Serial Number** | E254425853 |
 | **Management** | TBD |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->
@@ -32,7 +32,8 @@ Industrial PC mounted on the DIN rail within the Energy Management Assembly. Run
 <!-- NETJSON:INTERFACES:START -->
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
-| X4LAN | ethernet | lan | TBD | NS-2 P1 |
+| X4LAN | ethernet | lan | TBD | NS-2 P1 — primary LAN (MAC CC:CC:EA:71:CB:50) |
+| X5LAN | ethernet | lan | TBD | Secondary LAN (MAC CC:CC:EA:71:CB:51) — TBD |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Physical Connections
