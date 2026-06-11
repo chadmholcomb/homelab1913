@@ -28,22 +28,22 @@ graph LR
     subgraph TGT["Target Hardware"]
         RTAC1["RTAC-1\nRTAC Controller"]
         MET1["MET-1\nPower Meter"]
-        DEV1["DEV-1\nPLC (WIP)"]
+        DEV1["DEV-1\nPLC"]
     end
 
     WAN ==> MOD1
     WAN ==> MOD2
     MOD1 -->|"ETH - MOD-1:LAN -- NS-1:P1"| NS1
+    NS1 -->|"ETH - NS-1:P2 -- MET-1:ETH0"| MET1
     NS1 -->|"ETH - NS-1:P6 -- PC-1:enp1s0"| PC1
+    NS1 -->|"ETH - NS-1:P7 -- DEV-1:ETH1"| DEV1
     NS1 -->|"ETH - NS-1:P8 -- FMC-1:ETH"| FMC1
     FMC1 ==>|"FIBER - FMC-1:SFP -- FMC-2:SFP"| FMC2
     FMC2 -->|"ETH - FMC-2:ETH -- NS-2:P8"| NS2
     MOD2 -->|"ETH - MOD-2:LAN -- NS-2:TBD"| NS2
     NS2 -->|"ETH - NS-2:P1 -- PC-2:X4LAN"| PC2
     NS2 -->|"ETH - NS-2:P4 -- RTAC-1:ETH1"| RTAC1
-    NS2 -->|"ETH - NS-2:P5 -- MET-1:ETH0"| MET1
     NS2 -->|"ETH+PoE - NS-2:P6 -- AP-2:eth0"| AP2
-    NS2 -.->|"ETH - NS-2:P7 -- DEV-1:ETH0 planned"| DEV1
 
 
 ```
@@ -80,7 +80,7 @@ See [docs/architecture.md](docs/architecture.md) for the full connection type st
 | Tag | Device | Type | MAC Address | Serial Number |
 |-----|--------|------|-------------|---------------|
 | [AP-2](docs/devices/ap-2.md) | WiFi Access Point | Wireless Access Point | TBD | TBD |
-| [MOD-2](docs/devices/mod-2.md) | Cradlepoint S700 | 5G/LTE Branch Router | TBD | TBD |
+| [MOD-2](docs/devices/mod-2.md) | Cradlepoint S700 | 5G/LTE Branch Router | 00:30:44:C3:EF:7A | TBD |
 | [NS-2](docs/devices/ns-2.md) | Ubiquiti USW-Pro-8-PoE 120W | Managed Layer 2/3 PoE Switch | TBD | TBD |
 | [PC-2](docs/devices/pc-2.md) | Phoenix Contact PC | Industrial DIN-Rail PC | TBD | TBD |
 
@@ -88,7 +88,7 @@ See [docs/architecture.md](docs/architecture.md) for the full connection type st
 
 | Tag | Device | Type | MAC Address | Serial Number |
 |-----|--------|------|-------------|---------------|
-| [DEV-1](docs/devices/dev-1.md) | Arduino OPTA | Industrial Programmable Logic Controller | TBD | TBD |
+| [DEV-1](docs/devices/dev-1.md) | Wago 750-8212 | Programmable Logic Controller | TBD | TBD |
 | [MET-1](docs/devices/met-1.md) | eGauge 4015 | Revenue-Grade Power Meter | TBD | TBD |
 | [RTAC-1](docs/devices/rtac-1.md) | SEL RTAC 3505 | Real-Time Automation Controller | TBD | TBD |
 

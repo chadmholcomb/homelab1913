@@ -10,7 +10,7 @@
 | **Subsystem** | Energy Management Assembly |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
-| **MAC Address** | TBD |
+| **MAC Address** | 00:30:44:C3:EF:7A |
 | **Serial Number** | TBD |
 | **Management** | NetCloud Manager |
 | **Management URL** | TBD |

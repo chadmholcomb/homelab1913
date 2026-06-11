@@ -1,64 +1,61 @@
-# DEV-1 — Arduino OPTA
+# DEV-1 — Wago 750-8212
 
 <!-- NETJSON:START -->
 | Field | Value |
 |-------|-------|
 | **Tag** | DEV-1 |
-| **Manufacturer** | Arduino |
-| **Model** | OPTA |
-| **Type** | Industrial Programmable Logic Controller |
+| **Manufacturer** | Wago |
+| **Model** | 750-8212 |
+| **Type** | Programmable Logic Controller |
 | **Subsystem** | Target Hardware |
 | **Hostname** | TBD |
 | **IP Address** | TBD |
 | **MAC Address** | TBD |
 | **Serial Number** | TBD |
-| **Management** | Arduino IDE / Arduino Cloud |
+| **Management** | CODESYS / Web UI |
 | **Management URL** | TBD |
 <!-- NETJSON:END -->
 
 ## Role
 
-Industrial-grade Arduino used as a test and simulation device. Intended to act as a programmable client/master to exercise and validate the target hardware in this lab:
-
-- **PC-2** (Phoenix Contact PC) — TBD protocol/connection
-- **RTAC-1** (SEL RTAC 3505) — TBD protocol/connection
-- **MET-1** (eGauge 4015) — TBD protocol/connection
-
-> This device is a work in progress. Connections and test programs are not yet defined.
+Wago PFC200 programmable logic controller used as a test and simulation device in the Target Hardware subsystem. Connected to the Development switch (NS-1) for programming and network communication. Intended to act as a programmable client/master to exercise and validate other target hardware in the lab (RTAC-1, MET-1).
 
 ## Key Specs
 
-- STM32H747 dual-core processor (Cortex-M7 + M4)
-- 8x digital I/O (relay outputs up to 250VAC/2A)
-- 4x analog inputs (0–10V or 4–20mA)
-- 1x 10/100 Ethernet port
-- 1x RS-485 port
-- USB-C programming port
-- DIN-rail mountable
-- Operating temperature: -20°C to 50°C
+- Wago 750-8212 PFC200 Controller
+- Dual-core ARM Cortex-A8 processor (Linux-based runtime)
+- Runs CODESYS 3 runtime
+- 2x RJ45 Ethernet ports (ETH1, ETH2) — supports switch or independent addressing
+- Supports Modbus TCP (master/slave), EtherNet/IP, PROFIBUS, CANopen (via fieldbus modules)
+- DIN-rail mountable with 750/753 series I/O module expansion
+- Web-based management UI (WBM)
 
 ## Interfaces
 
 <!-- NETJSON:INTERFACES:START -->
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
-| ETH0 | ethernet | lan | TBD | NS-2 P7 (planned) |
-| RS485 | rs485 | serial | TBD | TBD — connection to PC-2 / RTAC-1 / MET-1 (planned) |
+| ETH1 | ethernet | lan | TBD | NS-1 P7 |
 <!-- NETJSON:INTERFACES:END -->
 
-## Planned Connections
+## Physical Connections
 
-| Interface | Target | Protocol | Purpose |
-|-----------|--------|----------|---------|
-| ETH0 / RS-485 | PC-2 | TBD | TBD |
-| ETH0 / RS-485 | RTAC-1 | TBD | TBD |
-| ETH0 | MET-1 | Modbus TCP | TBD |
+- **ETH1:** → NS-1 Port P7 (primary network / programming)
+
+## Protocol Map
+
+| Protocol | Role | Notes |
+|----------|------|-------|
+| Modbus TCP | Master/Client | TBD — polling RTAC-1 or MET-1 |
+| EtherNet/IP | TBD | TBD |
+| CODESYS runtime | Programming | Via CODESYS Development System over ETH1 |
+| Web UI (WBM) | Management | Browser-based configuration at device IP |
 
 ## Management Access
 
-- **Arduino IDE:** USB-C programming connection
-- **Arduino Cloud:** TBD (if cloud agent configured)
+- **Web-Based Management (WBM):** `http://<device-ip>` — device IP TBD
+- **CODESYS Development System:** Connect to ETH1 over the lab network
 
 ## Notes
 
-Connections and test programs to be built out. All interface and protocol details are TBD pending lab configuration decisions.
+TBD — I/O module configuration and test programs not yet defined.

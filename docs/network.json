@@ -56,7 +56,7 @@
                 "type": "5G/LTE Branch Router",
                 "subsystem": "ema",
                 "hostname": null,
-                "mac_address": null,
+                "mac_address": "00:30:44:C3:EF:7A",
                 "serial_number": null,
                 "management_platform": "NetCloud Manager",
                 "management_url": null,
@@ -114,7 +114,7 @@
                         "type": "ethernet",
                         "role": "access",
                         "addresses": [],
-                        "notes": "TBD"
+                        "notes": "MET-1 (ETH0)"
                     },
                     {
                         "name": "P3",
@@ -149,7 +149,7 @@
                         "type": "ethernet",
                         "role": "access",
                         "addresses": [],
-                        "notes": "TBD"
+                        "notes": "DEV-1 (ETH1)"
                     },
                     {
                         "name": "P8",
@@ -214,7 +214,7 @@
                         "type": "ethernet",
                         "role": "access",
                         "addresses": [],
-                        "notes": "MET-1 (ETH0)"
+                        "notes": "TBD"
                     },
                     {
                         "name": "P6",
@@ -228,7 +228,7 @@
                         "type": "ethernet",
                         "role": "access",
                         "addresses": [],
-                        "notes": "DEV-1 (planned)"
+                        "notes": "TBD"
                     },
                     {
                         "name": "P8",
@@ -529,7 +529,7 @@
                         "type": "ethernet",
                         "role": "lan",
                         "addresses": [],
-                        "notes": "NS-2 P5"
+                        "notes": "NS-1 P2"
                     }
                 ],
                 "protocols": [
@@ -542,42 +542,37 @@
         },
         {
             "id": "DEV-1",
-            "label": "Arduino OPTA",
+            "label": "Wago 750-8212",
             "local_addresses": [],
             "properties": {
                 "tag": "DEV-1",
-                "manufacturer": "Arduino",
-                "model": "OPTA",
-                "type": "Industrial Programmable Logic Controller",
+                "manufacturer": "Wago",
+                "model": "750-8212",
+                "type": "Programmable Logic Controller",
                 "subsystem": "target",
                 "hostname": null,
                 "mac_address": null,
                 "serial_number": null,
-                "management_platform": "Arduino IDE / Arduino Cloud",
+                "management_platform": "CODESYS / Web UI",
                 "management_url": null,
                 "firmware_version": null,
                 "doc": "docs/devices/dev-1.md",
                 "interfaces": [
                     {
-                        "name": "ETH0",
+                        "name": "ETH1",
                         "type": "ethernet",
                         "role": "lan",
                         "addresses": [],
-                        "notes": "NS-2 P7 (planned)"
-                    },
-                    {
-                        "name": "RS485",
-                        "type": "rs485",
-                        "role": "serial",
-                        "addresses": [],
-                        "notes": "TBD — connection to PC-2 / RTAC-1 / MET-1 (planned)"
+                        "notes": "NS-1 P7"
                     }
                 ],
                 "protocols": [
+                    "Modbus TCP",
                     "Modbus RTU",
-                    "Modbus TCP"
+                    "EtherNet/IP",
+                    "PROFIBUS"
                 ],
-                "notes": "Test device for PC-2, RTAC-1, MET-1. Connections TBD."
+                "notes": ""
             }
         }
     ],
@@ -702,11 +697,11 @@
             }
         },
         {
-            "source": "NS-2",
+            "source": "NS-1",
             "target": "MET-1",
             "properties": {
                 "type": "ethernet",
-                "source_port": "P5",
+                "source_port": "P2",
                 "target_interface": "ETH0",
                 "media": "copper",
                 "speed": "1Gbps",
@@ -727,15 +722,15 @@
             }
         },
         {
-            "source": "NS-2",
+            "source": "NS-1",
             "target": "DEV-1",
             "properties": {
                 "type": "ethernet",
                 "source_port": "P7",
-                "target_interface": "ETH0",
+                "target_interface": "ETH1",
                 "media": "copper",
                 "speed": "1Gbps",
-                "notes": "Planned — not yet connected"
+                "notes": ""
             }
         }
     ]

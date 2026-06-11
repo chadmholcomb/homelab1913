@@ -34,7 +34,7 @@ Revenue-grade power meter providing real-time and historical energy data. Primar
 <!-- NETJSON:INTERFACES:START -->
 | Interface | Type | Role | Address | Notes |
 |-----------|------|------|---------|-------|
-| ETH0 | ethernet | lan | TBD | NS-2 P5 |
+| ETH0 | ethernet | lan | TBD | NS-1 P2 |
 <!-- NETJSON:INTERFACES:END -->
 
 ## Physical Connections
